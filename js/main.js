@@ -66,6 +66,9 @@
         if (item) item.classList.toggle('open');
       });
     });
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { closeMenu(); });
+    });
   }
 
   /* ---------- Theme toggle ---------- */
