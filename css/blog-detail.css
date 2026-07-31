@@ -6,7 +6,7 @@
 .read-progress { position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,var(--brand-600),var(--accent-500)); z-index:2000; transition:width .1s linear; box-shadow:0 0 8px rgba(52,163,255,.5); }
 
 /* Article hero */
-.article-hero { position:relative; padding:calc(var(--header-h) + 4rem) 0 4rem; overflow:hidden; background:linear-gradient(135deg,var(--neutral-900),var(--neutral-950)); color:#fff; }
+.article-hero { position:relative; min-height:calc(62vh - var(--header-h)); margin-top:var(--header-h); display:flex; align-items:center; padding:4rem 0 4rem; overflow:hidden; background:linear-gradient(135deg,var(--neutral-900),var(--neutral-950)); color:#fff; }
 .article-hero .ah-bg { position:absolute; inset:0; z-index:0; }
 .article-hero .ah-bg img { width:100%; height:100%; object-fit:cover; opacity:.18; }
 .article-hero .ah-bg::after { content:""; position:absolute; inset:0; background:linear-gradient(135deg,rgba(2,6,23,.82),rgba(15,40,80,.68)); }
