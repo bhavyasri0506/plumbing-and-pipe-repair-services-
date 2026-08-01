@@ -1137,7 +1137,6 @@ main > .section:last-of-type, main > section:last-of-type { padding-bottom: 1.5r
   font-size: 1.05rem;
   flex-shrink: 0;
 }
-
 /* Sticky elements must not have a transform — it breaks position:sticky */
 .reveal.sticky-top,
 .reveal.is-visible.sticky-top {
@@ -1146,6 +1145,7 @@ main > .section:last-of-type, main > section:last-of-type { padding-bottom: 1.5r
   animation: none;
 }
 
+/* Booking form card — sticky right column */
 .section .sticky-top.card {
   border-radius: 1.25rem;
   padding: 2rem;
@@ -1176,10 +1176,8 @@ main > .section:last-of-type, main > section:last-of-type { padding-bottom: 1.5r
   margin-bottom: .5rem;
 }
 .section .sticky-top.card.is-sticky-fixed { position: fixed; top: 100px; width: calc(33.3333% - 1.5rem); max-width: 28rem; }
-.section .row > .col-lg-4 { position: sticky; top: 100px; align-self: flex-start; max-height: calc(100vh - 120px); overflow-y: auto; }
+.section .row > .col-lg-4 { position: sticky; top: 100px; align-self: flex-start; }
 .section .row > .col-lg-4 > .sticky-top { position: relative; top: auto; }
-.section .row > .col-lg-4::-webkit-scrollbar { width: 4px; }
-.section .row > .col-lg-4::-webkit-scrollbar-thumb { background: var(--brand-300); border-radius: 4px; }
 @media(max-width:768px){ .section .row > .col-lg-4 { position: static; } }
 
 /* FAQ accordion — enhanced */
