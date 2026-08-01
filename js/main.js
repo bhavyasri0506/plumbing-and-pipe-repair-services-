@@ -27,13 +27,13 @@
       { href: ROOT + 'blogs.html', label: 'Blog', icon: 'bi-journal-text' },
       { href: ROOT + 'contact.html', label: 'Contact', icon: 'bi-telephone' }
     ];
-    var here = location.pathname.split('/').pop() || 'home-1.html';
-    var homeActive = (here === 'home-1.html' || here === 'home-2.html') ? ' active' : '';
+    var here = location.pathname.split('/').pop() || 'index.html';
+    var homeActive = (here === 'index.html' || here === 'home-2.html') ? ' active' : '';
     var homeItem =
       '<li class="mobile-drawer-dropdown">' +
         '<button class="mobile-drawer-toggle" type="button"><i class="bi bi-house"></i> Home <i class="bi bi-chevron-down mobile-drawer-caret"></i></button>' +
         '<ul class="mobile-drawer-sublinks">' +
-          '<li><a href="' + ROOT + 'home-1.html"' + (here === 'home-1.html' ? ' class="active"' : '') + '><i class="bi bi-house-door"></i> Home 1</a></li>' +
+          '<li><a href="' + ROOT + 'index.html"' + (here === 'index.html' ? ' class="active"' : '') + '><i class="bi bi-house-door"></i> Home 1</a></li>' +
           '<li><a href="' + ROOT + 'home-2.html"' + (here === 'home-2.html' ? ' class="active"' : '') + '><i class="bi bi-house-door"></i> Home 2</a></li>' +
         '</ul>' +
       '</li>';

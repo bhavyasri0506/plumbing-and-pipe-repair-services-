@@ -10,7 +10,7 @@
   var ROOT = window.AQUA_ROOT || '';
 
   var navLinks = [
-    { id: 'home-1', label: 'Home 1', href: 'home-1.html' },
+    { id: 'home-1', label: 'Home 1', href: 'index.html' },
     { id: 'home-2', label: 'Home 2', href: 'home-2.html' },
     { id: 'about', label: 'About', href: 'about-us.html' },
     { id: 'services', label: 'Services', href: 'services.html' },
@@ -21,7 +21,7 @@
 
   function isHomeActive() { return PAGE === 'home-1' || PAGE === 'home-2'; }
 
-  var navHTML = '<a class="navbar-brand-custom" href="' + ROOT + 'home-1.html">' +
+  var navHTML = '<a class="navbar-brand-custom" href="' + ROOT + 'index.html">' +
     '<span class="logo-badge"><i class="bi bi-droplet-half"></i></span>' +
     '<span>AquaFix</span></a>';
 
@@ -29,7 +29,7 @@
   // Home dropdown — simple, just Home 1 and Home 2
   desktopLinks += '<li class="dropdown-custom"><a class="nav-link-custom ' + (isHomeActive() ? 'active' : '') + '" href="#" role="button" aria-haspopup="true">Home <i class="bi bi-chevron-down" style="font-size:.55rem"></i></a>' +
     '<div class="dropdown-menu-custom" style="min-width:10rem">' +
-    '<a class="dropdown-item-custom" href="' + ROOT + 'home-1.html">Home 1</a>' +
+    '<a class="dropdown-item-custom" href="' + ROOT + 'index.html">Home 1</a>' +
     '<a class="dropdown-item-custom" href="' + ROOT + 'home-2.html">Home 2</a>' +
     '</div></li>';
   navLinks.slice(2).forEach(function (l) {
@@ -77,7 +77,7 @@
       '<div class="container-page" style="position:relative">' +
       '<div class="grid-4" style="gap:3rem">' +
       '<div style="grid-column:span 1">' +
-        '<a class="navbar-brand-custom" href="' + ROOT + 'home-1.html" style="color:#fff"><span class="logo-badge"><i class="bi bi-droplet-half"></i></span>AquaFix</a>' +
+        '<a class="navbar-brand-custom" href="' + ROOT + 'index.html" style="color:#fff"><span class="logo-badge"><i class="bi bi-droplet-half"></i></span>AquaFix</a>' +
         '<p style="margin-top:1.25rem;max-width:24rem;font-size:.875rem;color:rgba(255,255,255,.6)">Reliable, licensed plumbing services for homes and businesses across Hyderabad. Upfront pricing, on-time arrival, and a written guarantee on every job.</p>' +
         '<div class="flex gap-2" style="margin-top:1.5rem">' +
           '<a href="#" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>' +
