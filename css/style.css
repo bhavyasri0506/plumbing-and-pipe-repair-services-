@@ -154,8 +154,8 @@ section { padding: 5.5rem 0; }
   .navbar-custom .nav-center { display:none; }
   .nav-mobile-only { display:inline-flex !important; }
   .nav-desktop-only { display:none !important; }
-  #mobileMenuBtn { width:44px; height:44px; display:grid; place-items:center; flex-shrink:0; margin:0 auto; }
-  #mobileMenuBtn i { line-height:1; display:block; text-align:center; }
+  #mobileMenuBtn { width:44px; height:44px; display:flex; align-items:center; justify-content:center; flex-shrink:0; padding:0; }
+  #mobileMenuBtn i { line-height:1; }
 }
 .navbar-custom .nav-right { margin-inline-start:auto; }
 
