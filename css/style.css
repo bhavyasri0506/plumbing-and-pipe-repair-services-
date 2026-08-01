@@ -154,7 +154,8 @@ section { padding: 5.5rem 0; }
   .navbar-custom .nav-center { display:none; }
   .nav-mobile-only { display:inline-flex !important; }
   .nav-desktop-only { display:none !important; }
-   #mobileMenuBtn { width:44px; height:44px; display:grid; place-items:center; }
+  #mobileMenuBtn { width:44px; height:44px; display:grid; place-items:center; flex-shrink:0; margin:0 auto; }
+  #mobileMenuBtn i { line-height:1; display:block; text-align:center; }
 }
 .navbar-custom .nav-right { margin-inline-start:auto; }
 
@@ -1176,10 +1177,9 @@ main > .section:last-of-type, main > section:last-of-type { padding-bottom: 1.5r
   margin-bottom: .5rem;
 }
 .section .sticky-top.card.is-sticky-fixed { position: fixed; top: 100px; width: calc(33.3333% - 1.5rem); max-width: 28rem; }
-.section .row > .col-lg-4 { position: sticky; top: 100px; align-self: flex-start; }
+.section .row > .col-lg-4 { position: sticky; top: 80px; align-self: flex-start; }
 .section .row > .col-lg-4 > .sticky-top { position: relative; top: auto; }
-@media(max-width:768px){ .section .row > .col-lg-4 { position: static; } }
-
+@media(max-width:768px){ .section .row > .col-lg-4 { position: static; margin-top:2.5rem; } .section .row.g-4 > [class*="col-"] { margin-bottom:1.5rem; } .section .reveal.mt-5.pt-4 { margin-top:3rem !important; } }
 /* FAQ accordion — enhanced */
 .section .accordion-item {
   border-radius: .85rem;
