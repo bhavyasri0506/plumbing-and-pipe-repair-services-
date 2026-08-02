@@ -1,17 +1,22 @@
 <!doctype html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1d83f5" />
   <title>Register | AquaFix Plumbing</title>
-  <meta name="description" content="Create an AquaFix account to book plumbing services, track appointments, and join our maintenance plan." />
+  <meta name="description"
+    content="Create an AquaFix account to book plumbing services, track appointments, and join our maintenance plan." />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
 </head>
+
 <body>
   <div class="auth-page">
     <div class="auth-bg"></div>
@@ -20,22 +25,45 @@
         <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL" title="Toggle RTL"></button>
         <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
       </div>
-      <a href="index.html" class="navbar-brand-custom" style="text-decoration:none;color:inherit;justify-content:center;font-size:1.5rem"><span class="logo-badge"><i class="bi bi-droplet-half"></i></span><span><span class="logo-name-aqua">Aqua</span><span class="logo-name-fix">Fix</span></span></a>
+      <a href="index.html" class="navbar-brand-custom"
+        style="text-decoration:none;color:inherit;justify-content:center;font-size:1.5rem"><span class="logo-badge"><i
+            class="bi bi-droplet-half"></i></span><span><span class="logo-name-aqua">Aqua</span><span
+            class="logo-name-fix">Fix</span></span></a>
       <h1 style="font-size:1.25rem;text-align:center;margin-top:.6rem">Create your account</h1>
-      <p style="font-size:.78rem;text-align:center;margin-top:.3rem" class="muted">Join AquaFix to book services and manage your maintenance plan</p>
+      <p style="font-size:.78rem;text-align:center;margin-top:.3rem" class="muted">Join AquaFix to book services and
+        manage your maintenance plan</p>
 
       <form data-validate data-success="Account created! Check your email to verify." style="margin-top:.85rem">
-        <div><label class="form-label-custom">Full name</label><input class="form-control-custom" type="text" name="name" placeholder="Your name" data-validate-field required></div>
+        <div><label class="form-label-custom">Full name</label><input class="form-control-custom" type="text"
+            name="name" placeholder="Your name" data-validate-field required></div>
         <div class="grid-2" style="gap:.6rem;margin-top:.5rem">
-          <div><label class="form-label-custom">Email</label><input class="form-control-custom" type="email" name="email" placeholder="your@email.com" data-validate-field required></div>
-          <div><label class="form-label-custom">Phone</label><input class="form-control-custom" type="tel" name="phone" placeholder="+91 ..." data-validate-field required></div>
+          <div><label class="form-label-custom">Email</label><input class="form-control-custom" type="email"
+              name="email" placeholder="your@email.com" data-validate-field required></div>
+          <div><label class="form-label-custom">Phone</label><input class="form-control-custom" type="tel" name="phone"
+              placeholder="+91 ..." data-validate-field required></div>
         </div>
         <div class="grid-2" style="gap:.6rem;margin-top:.5rem">
-          <div><label class="form-label-custom">Password</label><div class="pwd-wrapper"><input class="form-control-custom" type="password" name="password" placeholder="Min 6 characters" data-validate-field required data-min-length="6"><button type="button" class="pwd-toggle" onclick="var p=this.previousElementSibling;var i=this.querySelector('i');if(p.type==='password'){p.type='text';i.className='bi bi-eye-slash';}else{p.type='password';i.className='bi bi-eye';}"><i class="bi bi-eye"></i></button></div></div>
-          <div><label class="form-label-custom">Confirm password</label><div class="pwd-wrapper"><input class="form-control-custom" type="password" name="confirm" placeholder="Re-enter password" data-validate-field required data-min-length="6"><button type="button" class="pwd-toggle" onclick="var p=this.previousElementSibling;var i=this.querySelector('i');if(p.type==='password'){p.type='text';i.className='bi bi-eye-slash';}else{p.type='password';i.className='bi bi-eye';}"><i class="bi bi-eye"></i></button></div></div>
+          <div><label class="form-label-custom">Password</label>
+            <div class="pwd-wrapper"><input class="form-control-custom" type="password" name="password"
+                placeholder="Min 6 characters" data-validate-field required data-min-length="6"><button type="button"
+                class="pwd-toggle"
+                onclick="var p=this.previousElementSibling;var i=this.querySelector('i');if(p.type==='password'){p.type='text';i.className='bi bi-eye-slash';}else{p.type='password';i.className='bi bi-eye';}"><i
+                  class="bi bi-eye"></i></button></div>
+          </div>
+          <div><label class="form-label-custom">Confirm password</label>
+            <div class="pwd-wrapper"><input class="form-control-custom" type="password" name="confirm"
+                placeholder="Re-enter password" data-validate-field required data-min-length="6"><button type="button"
+                class="pwd-toggle"
+                onclick="var p=this.previousElementSibling;var i=this.querySelector('i');if(p.type==='password'){p.type='text';i.className='bi bi-eye-slash';}else{p.type='password';i.className='bi bi-eye';}"><i
+                  class="bi bi-eye"></i></button></div>
+          </div>
         </div>
-        <label class="chk-custom" style="margin-top:.6rem"><input type="checkbox" name="terms" required> I agree to the <a href="terms-and-conditions.html" style="color:var(--brand-600)">Terms</a> and <a href="privacy-policy.html" style="color:var(--brand-600)">Privacy Policy</a></label>
-        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:.6rem;padding:.6rem 1.4rem;font-size:.88rem">Create account <i class="bi bi-arrow-right"></i></button>
+        <label class="chk-custom" style="margin-top:.6rem"><input type="checkbox" name="terms" required> I agree to the
+          <a href="terms-and-conditions.html" style="color:var(--brand-600)">Terms</a> and <a href="privacy-policy.html"
+            style="color:var(--brand-600)">Privacy Policy</a></label>
+        <button type="submit" class="btn btn-primary"
+          style="width:100%;margin-top:.6rem;padding:.6rem 1.4rem;font-size:.88rem">Create account <i
+            class="bi bi-arrow-right"></i></button>
       </form>
 
       <div class="auth-divider">or sign up with</div>
@@ -44,10 +72,12 @@
         <button class="auth-social-btn"><i class="bi bi-apple" style="font-size:1.05rem"></i> Apple</button>
       </div>
 
-      <p style="text-align:center;margin-top:.7rem;font-size:.78rem" class="muted">Already have an account? <a href="login.html" style="color:var(--brand-600);font-weight:600">Sign in</a></p>
+      <p style="text-align:center;margin-top:.7rem;font-size:.78rem" class="muted">Already have an account? <a
+          href="login.html" style="color:var(--brand-600);font-weight:600">Sign in</a></p>
     </div>
   </div>
   <script src="js/main.js"></script>
   <script src="js/validation.js"></script>
 </body>
+
 </html>
