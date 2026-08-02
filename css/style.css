@@ -351,7 +351,10 @@ section { padding: 5.5rem 0; }
 .footer a:hover { color: var(--brand-300); }
 .footer .social-btn { width:40px; height:40px; display:grid; place-items:center; border-radius:50%; background: rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); transition: all var(--transition); }
 .footer .social-btn:hover { background: var(--brand-600); color:#fff; transform: translateY(-3px); }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .footer .grid-4 { grid-template-columns: repeat(2,1fr) !important; }
+}
+@media (max-width: 480px) {
   .footer .grid-4 { grid-template-columns: 1fr !important; text-align: center; }
   .footer .grid-4 > div { display: flex; flex-direction: column; align-items: center; }
   .footer .grid-4 > div > a.navbar-brand-custom { justify-content: center; }
@@ -474,6 +477,15 @@ section { padding: 5.5rem 0; }
 .grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:2.5rem; }
 .grid-4 { display:grid; grid-template-columns: repeat(4,1fr); gap:2rem; }
 @media (max-width: 992px) { .grid-3, .grid-4 { grid-template-columns: repeat(2,1fr); } }
+@media (min-width: 641px) and (max-width: 992px) {
+  .grid-3 > *:nth-child(3):last-child,
+  .grid-4 > *:nth-child(3):last-child:not(:nth-child(4)) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: calc(50% - 1.25rem);
+    width: 100%;
+  }
+}
 @media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
 .flex { display:flex; }
 .flex-col { flex-direction: column; }
@@ -845,6 +857,27 @@ main > .section:last-of-type, main > section:last-of-type { padding-bottom: 1.5r
   .hero { min-height:calc(68vh - var(--header-h)); padding-top:1.5rem; padding-bottom:1.5rem; }
   .page-header, .article-hero { min-height:calc(68vh - var(--header-h)); padding:1.5rem 0 1.5rem; }
   .blog-hero { min-height:calc(68vh - var(--header-h)); padding:1.5rem 0 1.5rem; }
+}
+/* ---------- Nest Hub (1024px) ---------- */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .container-page, .container { padding-inline: 1.25rem; }
+  .navbar-custom .nav-links .nav-link-custom { padding: .5rem .7rem; font-size: .9rem; }
+  .contact-info-item { align-items: flex-start; text-align: left; }
+  .contact-info-item .ci-icon { width: 42px; height: 42px; font-size: 1.1rem; }
+  .contact-info-item h3 { font-size: 1rem !important; }
+  .contact-info-item p { font-size: .9rem !important; line-height: 1.55 !important; }
+}
+
+/* ---------- iPad mini (768px) tablet layout ---------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  section { padding: 4rem 0; }
+  .section { padding: 3.5rem 0; }
+  .hero-img-wrap img { height: 24rem; }
+  .service-card .img-wrap { height: 14rem; }
+  .team-card .team-img { height: 15rem; }
+  .faq-tab-wrap { grid-template-columns: 220px 1fr; }
+  .blog-card .blog-img { height: 12rem; }
 }
 
 /* ==========================================================================
