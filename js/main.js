@@ -1,217 +1,475 @@
-/* ==========================================================================
-   AquaFix — main.js
-   Shared: navbar scroll, mobile menu, theme toggle, RTL toggle, reveal, FAQ
-   ========================================================================== */
-(function () {
-  'use strict';
+/* ============================================
+   AquaFix — Main JavaScript
+   Header/Footer injection, Dark Mode, RTL,
+   Scroll Animations, Counters, Forms
+   ============================================ */
 
-  var ROOT = window.AQUA_ROOT || '';
+document.documentElement.classList.add('js');
 
-  /* ---------- Navbar scroll state ---------- */
-  var navbar = document.querySelector('.navbar-custom');
-  if (navbar) {
-    var onScroll = function () {
-      navbar.classList.toggle('scrolled', window.scrollY > 16);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
+/* ---------- Icon Helper (Bootstrap Icons) ---------- */
+const iconMap = {
+  'droplet': 'bi-droplet', 'chevron-down': 'bi-chevron-down', 'house': 'bi-house',
+  'moon': 'bi-moon', 'log-in': 'bi-box-arrow-in-right', 'menu': 'bi-list',
+  'facebook': 'bi-facebook', 'twitter': 'bi-twitter', 'instagram': 'bi-instagram',
+  'linkedin': 'bi-linkedin', 'youtube': 'bi-youtube', 'chevron-right': 'bi-chevron-right',
+  'map-pin': 'bi-geo-alt', 'phone': 'bi-telephone', 'mail': 'bi-envelope',
+};
+function icon(name, opts = {}) {
+  const bi = iconMap[name] || name;
+  const cls = opts.class ? ` ${opts.class}` : '';
+  return `<i class="bi ${bi}${cls}"></i>`;
+}
 
-  /* ---------- Mobile drawer menu ---------- */
-  var menuBtn = document.getElementById('mobileMenuBtn');
-  if (menuBtn) {
-    var links = [
-      { href: ROOT + 'about-us.html', label: 'About', icon: 'bi-info-circle' },
-      { href: ROOT + 'services.html', label: 'Services', icon: 'bi-wrench' },
-      { href: ROOT + 'pricing.html', label: 'Pricing', icon: 'bi-tag' },
-      { href: ROOT + 'blogs.html', label: 'Blog', icon: 'bi-journal-text' },
-      { href: ROOT + 'contact.html', label: 'Contact', icon: 'bi-telephone' }
-    ];
-    var here = location.pathname.split('/').pop() || 'index.html';
-    var homeActive = (here === 'index.html' || here === 'home-2.html') ? ' active' : '';
-    var homeItem =
-      '<li class="mobile-drawer-dropdown">' +
-        '<button class="mobile-drawer-toggle" type="button"><i class="bi bi-house"></i> Home <i class="bi bi-chevron-down mobile-drawer-caret"></i></button>' +
-        '<ul class="mobile-drawer-sublinks">' +
-          '<li><a href="' + ROOT + 'index.html"' + (here === 'index.html' ? ' class="active"' : '') + '><i class="bi bi-house-door"></i> Home 1</a></li>' +
-          '<li><a href="' + ROOT + 'home-2.html"' + (here === 'home-2.html' ? ' class="active"' : '') + '><i class="bi bi-house-door"></i> Home 2</a></li>' +
-        '</ul>' +
-      '</li>';
-    var items = homeItem + links.map(function (l) {
-      var active = (l.href === here) ? ' active' : '';
-      return '<li><a href="' + l.href + '" class="' + active.trim() + '"><i class="bi ' + l.icon + '"></i>' + l.label + '</a></li>';
-    }).join('');
-    var drawer = document.createElement('aside');
-    drawer.className = 'mobile-drawer';
-    drawer.innerHTML =
-      '<button class="mobile-drawer-close" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>' +
-      '<ul class="mobile-drawer-links">' + items + '</ul>' +
-      '<div class="mobile-drawer-cta">' +
-        '<a href="' + ROOT + 'contact.html" class="btn btn-primary" style="width:100%"><i class="bi bi-calendar-check"></i> Book Now</a>' +
-        '<a href="' + ROOT + 'login.html" class="btn btn-ghost" style="width:100%"><i class="bi bi-box-arrow-in-right"></i> Login</a>' +
-      '</div>';
-    var overlay = document.createElement('div');
-    overlay.className = 'mobile-drawer-overlay';
-    document.body.appendChild(overlay);
-    document.body.appendChild(drawer);
-    function openMenu() { drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeMenu() { drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
-    menuBtn.addEventListener('click', openMenu);
-    overlay.addEventListener('click', closeMenu);
-    drawer.querySelector('.mobile-drawer-close').addEventListener('click', closeMenu);
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
-    drawer.querySelectorAll('.mobile-drawer-toggle').forEach(function (toggle) {
-      toggle.addEventListener('click', function () {
-        var item = toggle.closest('.mobile-drawer-dropdown');
-        if (item) item.classList.toggle('open');
-      });
-    });
-    drawer.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { closeMenu(); });
-    });
-  }
+/* ---------- Header Injection ---------- */
+function injectHeader(activePage) {
+  const header = document.getElementById('site-header');
+  if (!header) return;
 
-  /* ---------- Theme toggle ---------- */
-  var themeBtn = document.getElementById('themeToggle');
-  var getTheme = function () {
-    return localStorage.getItem('theme') ||
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  };
-  var applyTheme = function (t) {
-    document.documentElement.setAttribute('data-bs-theme', t);
-    localStorage.setItem('theme', t);
-    if (themeBtn) {
-      themeBtn.innerHTML = t === 'dark' ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
-      themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  const navItems = [
+    { label: 'Home', type: 'dropdown', active: activePage === 'home', children: [
+      { label: 'Home 1', href: 'index.html', icon: 'house' },
+      { label: 'Home 2', href: 'home-2.html', icon: 'house' },
+    ]},
+    { label: 'About', href: 'about-us.html', active: activePage === 'about' },
+    { label: 'Services', href: 'services.html', active: activePage === 'services' },
+    { label: 'Pricing', href: 'pricing.html', active: activePage === 'pricing' },
+    { label: 'Blog', href: 'blog.html', active: activePage === 'blog' },
+    { label: 'Contact', href: 'contact.html', active: activePage === 'contact' },
+  ];
+
+  const navLinksHtml = navItems.map(item => {
+    if (item.type === 'dropdown') {
+      return `
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-c dropdown-toggle ${item.active ? 'active' : ''}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ${item.label}
+            ${icon('chevron-down', { size: 16 })}
+          </a>
+          <ul class="dropdown-menu dropdown-menu-c">
+            ${item.children.map(c => `
+              <li>
+                <a class="dropdown-item dropdown-item-c" href="${c.href}">
+                  ${icon(c.icon, { size: 16 })} ${c.label}
+                </a>
+              </li>
+            `).join('')}
+          </ul>
+        </li>`;
     }
-  };
-  applyTheme(getTheme());
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      applyTheme(document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark');
-    });
-  }
+    return `
+      <li class="nav-item">
+        <a class="nav-link nav-link-c ${item.active ? 'active' : ''}" href="${item.href}">${item.label}</a>
+      </li>`;
+  }).join('');
 
-  /* ---------- RTL toggle ---------- */
-  var rtlBtn = document.getElementById('rtlToggle');
-  var getDir = function () { return localStorage.getItem('dir') || 'ltr'; };
-  var applyDir = function (d) {
-    document.documentElement.setAttribute('dir', d);
-    document.documentElement.lang = d === 'rtl' ? 'ar' : 'en';
-    localStorage.setItem('dir', d);
-    if (rtlBtn) {
-      rtlBtn.innerHTML = d === 'rtl' ? '<i class="bi bi-arrow-left-right"></i>' : '<i class="bi bi-arrow-left-right"></i>';
-      rtlBtn.style.transform = d === 'rtl' ? 'scaleX(-1)' : 'scaleX(1)';
-      rtlBtn.setAttribute('aria-label', d === 'rtl' ? 'Switch to left-to-right' : 'Switch to right-to-left');
-    }
-  };
-  applyDir(getDir());
-  if (rtlBtn) {
-    rtlBtn.addEventListener('click', function () {
-      applyDir(document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl');
-    });
-  }
+  header.innerHTML = `
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand navbar-brand-c" href="index.html" aria-label="AquaFix home">
+          <span class="logo-icon">${icon('droplet', { size: 24 })}</span>
+          <span><span class="brand-aqua">Aqua</span><span class="brand-fix">Fix</span></span>
+        </a>
 
-  /* ---------- Reveal on scroll ---------- */
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && reveals.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    reveals.forEach(function (el) { io.observe(el); });
+        <div class="header-controls order-lg-last d-flex align-items-center gap-2">
+          <button class="icon-btn rtl-text-btn" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL">
+            RTL
+          </button>
+          <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            ${icon('moon', { size: 20 })}
+          </button>
+          <a href="login.html" class="btn-login d-none d-lg-inline-flex">
+            ${icon('log-in', { size: 18 })} Login
+          </a>
+          <button class="navbar-toggler navbar-toggler-c d-lg-none" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain"
+            aria-expanded="false" aria-label="Toggle navigation">
+            ${icon('menu', { size: 24 })}
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            ${navLinksHtml}
+          </ul>
+          <a href="login.html" class="btn-login d-lg-none mb-2">
+            ${icon('log-in', { size: 18 })} Login
+          </a>
+        </div>
+      </div>
+    </nav>
+  `;
+
+  setupThemeToggle();
+  setupRtlToggle();
+  setupHeaderScroll();
+}
+
+/* ---------- Footer Injection ---------- */
+function injectFooter() {
+  const footer = document.getElementById('site-footer');
+  if (!footer) return;
+
+  footer.innerHTML = `
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-brand">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="logo-icon">${icon('droplet', { size: 24 })}</span>
+              <span class="brand-name"><span class="brand-aqua">Aqua</span><span class="brand-fix">Fix</span></span>
+            </div>
+            <p class="footer-text">
+              Reliable plumbing and pipe repair services you can trust. From emergency leaks to full bathroom
+              installations, our certified plumbers deliver quality workmanship every time.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook">${icon('facebook', { size: 18 })}</a>
+              <a href="#" aria-label="Twitter">${icon('twitter', { size: 18 })}</a>
+              <a href="#" aria-label="Instagram">${icon('instagram', { size: 18 })}</a>
+              <a href="#" aria-label="LinkedIn">${icon('linkedin', { size: 18 })}</a>
+              <a href="#" aria-label="YouTube">${icon('youtube', { size: 18 })}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html">${icon('chevron-right', { size: 14 })} About Us</a></li>
+            <li><a href="services.html">${icon('chevron-right', { size: 14 })} Services</a></li>
+            <li><a href="pricing.html">${icon('chevron-right', { size: 14 })} Pricing</a></li>
+            <li><a href="blog.html">${icon('chevron-right', { size: 14 })} Blog</a></li>
+            <li><a href="contact.html">${icon('chevron-right', { size: 14 })} Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-pipe-repair.html">${icon('chevron-right', { size: 14 })} Pipe Repair</a></li>
+            <li><a href="service-bathroom-fitting.html">${icon('chevron-right', { size: 14 })} Bathroom Fitting</a></li>
+            <li><a href="service-drain-cleaning.html">${icon('chevron-right', { size: 14 })} Drain Cleaning</a></li>
+            <li><a href="service-water-heater.html">${icon('chevron-right', { size: 14 })} Water Heaters</a></li>
+            <li><a href="services.html">${icon('chevron-right', { size: 14 })} All Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div class="footer-contact-item">
+            <span class="icon-wrap">${icon('map-pin', { size: 20 })}</span>
+            <div>
+              <div class="label">Address</div>
+              <div class="value">Plot No 42, Road No 12, Banjara Hills, Hyderabad, Telangana 500034</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon-wrap">${icon('phone', { size: 20 })}</span>
+            <div>
+              <div class="label">Emergency Hotline</div>
+              <div class="value">+91 90000 12345</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon-wrap">${icon('mail', { size: 20 })}</span>
+            <div>
+              <div class="label">Email</div>
+              <div class="value">support@aquafix.in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AquaFix Plumbing. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  `;
+
+
+}
+
+/* ---------- Theme Toggle ---------- */
+function setupThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+
+  const saved = localStorage.getItem('aquafix-theme') || 'light';
+  applyTheme(saved);
+
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-bs-theme') || 'light';
+    const next = current === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    localStorage.setItem('aquafix-theme', next);
+  });
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-bs-theme', theme);
+  const btn = document.getElementById('theme-toggle');
+  if (btn) {
+    btn.innerHTML = theme === 'dark' ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>';
+  }
+}
+
+/* ---------- RTL Toggle ---------- */
+function setupRtlToggle() {
+  const btn = document.getElementById('rtl-toggle');
+  if (!btn) return;
+
+  const saved = localStorage.getItem('aquafix-rtl') || 'ltr';
+  applyRtl(saved);
+
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('dir') || 'ltr';
+    const next = current === 'ltr' ? 'rtl' : 'ltr';
+    applyRtl(next);
+    localStorage.setItem('aquafix-rtl', next);
+  });
+}
+
+function applyRtl(dir) {
+  document.documentElement.setAttribute('dir', dir);
+  if (dir === 'rtl') {
+    document.documentElement.setAttribute('lang', 'ar');
   } else {
-    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    document.documentElement.setAttribute('lang', 'en');
   }
+}
 
-  /* ---------- FAQ accordion ---------- */
-  document.querySelectorAll('.faq-toggle').forEach(function (toggle) {
-    toggle.addEventListener('click', function () {
-      var item = toggle.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      // close siblings in same group
-      var group = item.closest('.faq-group');
-      if (group) group.querySelectorAll('.faq-item.open').forEach(function (o) {
-        if (o !== item) o.classList.remove('open');
-      });
-      item.classList.toggle('open', !isOpen);
-    });
-  });
+/* ---------- Header Scroll Shadow ---------- */
+function setupHeaderScroll() {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }, { passive: true });
+}
 
-  /* ---------- Footer year ---------- */
-  document.querySelectorAll('[data-year]').forEach(function (el) {
-    el.textContent = new Date().getFullYear();
-  });
-
-  /* ---------- Before/After slider ---------- */
-  document.querySelectorAll('.ba-slider').forEach(function (slider) {
-    var after = slider.querySelector('.ba-after');
-    var handle = slider.querySelector('.ba-handle');
-    var isDragging = false;
-    function setPos(clientX) {
-      var rect = slider.getBoundingClientRect();
-      var x = Math.max(0, Math.min(rect.width, clientX - rect.left));
-      var pct = (x / rect.width) * 100;
-      if (after) after.style.width = pct + '%';
-      if (handle) handle.style.left = pct + '%';
-    }
-    slider.addEventListener('mousedown', function (e) { isDragging = true; setPos(e.clientX); });
-    window.addEventListener('mousemove', function (e) { if (isDragging) setPos(e.clientX); });
-    window.addEventListener('mouseup', function () { isDragging = false; });
-    slider.addEventListener('touchstart', function (e) { isDragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchmove', function (e) { if (isDragging) setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchend', function () { isDragging = false; });
-  });
-
-  /* ---------- Live counter animation ---------- */
-  document.querySelectorAll('[data-counter]').forEach(function (el) {
-    var target = parseInt(el.getAttribute('data-counter'), 10);
-    var suffix = el.getAttribute('data-suffix') || '';
-    var started = false;
-    function animate() {
-      if (started) return; started = true;
-      var current = 0;
-      var step = Math.max(1, Math.ceil(target / 60));
-      var interval = setInterval(function () {
-        current += step;
-        if (current >= target) { current = target; clearInterval(interval); }
-        el.textContent = current.toLocaleString('en-IN') + suffix;
-      }, 25);
-    }
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { animate(); io.unobserve(e.target); } });
-      }, { threshold: 0.5 });
-      io.observe(el);
-    } else { animate(); }
-  });
-  /* ---------- Accordion (service detail pages) ---------- */
-  document.querySelectorAll('.accordion-button').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var item = btn.closest('.accordion-item');
-      var target = item.querySelector('.accordion-collapse');
-      var isOpen = target.classList.contains('show');
-      var parent = btn.closest('.accordion');
-      if (parent) parent.querySelectorAll('.accordion-collapse.show').forEach(function (c) { c.classList.remove('show'); });
-      if (!isOpen) target.classList.add('show');
-    });
-  });
-
-  /* ---------- Booking form (service detail pages) ---------- */
-  var bookingForm = document.getElementById('bookingForm');
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var alert = document.getElementById('bookingAlert');
-      if (alert) {
-        alert.classList.remove('d-none');
-        alert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+/* ---------- Scroll Animations ---------- */
+function setupScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
       }
-      bookingForm.reset();
     });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.animate-on-scroll, .reveal, .service-row, .testimonial-card, .story-card').forEach(el => observer.observe(el));
+}
+
+/* ---------- Counter Animation ---------- */
+function setupCounters() {
+  const counters = document.querySelectorAll('[data-counter]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.counter, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 2000;
+        let start = 0;
+        const stepTime = 20;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+        const timer = setInterval(() => {
+          start += increment;
+          if (start >= target) {
+            el.textContent = target.toLocaleString() + suffix;
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(start).toLocaleString() + suffix;
+          }
+        }, stepTime);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => observer.observe(c));
+}
+
+/* ---------- Password Eye Toggle ---------- */
+function setupPasswordToggles() {
+  document.querySelectorAll('[data-password-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.passwordToggle;
+      const input = document.getElementById(targetId);
+      if (!input) return;
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      btn.innerHTML = isPassword ? '<i class="bi bi-eye-slash"></i>' : '<i class="bi bi-eye"></i>';
+    });
+  });
+}
+
+/* ---------- Toast ---------- */
+function showToast(message) {
+  let container = document.querySelector('.toast-container-c');
+  if (!container) {
+    container = document.createElement('div');
+    container.className = 'toast-container-c';
+    document.body.appendChild(container);
   }
-})();
+  const toast = document.createElement('div');
+  toast.className = 'toast-c';
+  toast.innerHTML = `<i class="bi bi-check-circle"></i><span class="msg">${message}</span>`;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(20px)';
+    toast.style.transition = 'all .3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+/* ---------- FAQ Accordion ---------- */
+function setupFaq() {
+  document.querySelectorAll('[data-faq-item]').forEach(item => {
+    const header = item.querySelector('[data-faq-header]');
+    const body = item.querySelector('[data-faq-body]');
+    if (!header || !body) return;
+    header.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('[data-faq-item].open').forEach(o => {
+        o.classList.remove('open');
+        const b = o.querySelector('[data-faq-body]');
+        if (b) b.style.maxHeight = null;
+        const i = o.querySelector('[data-faq-icon]');
+        if (i) i.style.transform = 'rotate(0deg)';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        const i = item.querySelector('[data-faq-icon]');
+        if (i) i.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+}
+
+/* ---------- FAQ Tabs ---------- */
+function setupFaqTabs() {
+  document.querySelectorAll('[data-faq-tabs]').forEach(wrap => {
+    const buttons = wrap.querySelectorAll('.faq-tab-btn');
+    const panels = wrap.querySelectorAll('.faq-tab-panel');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-tab');
+        buttons.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = wrap.querySelector('#' + target);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  });
+}
+
+/* ---------- Before/After Slider ---------- */
+function setupBeforeAfter() {
+  document.querySelectorAll('[data-ba-slider]').forEach(slider => {
+    const handle = slider.querySelector('[data-ba-handle]');
+    const after = slider.querySelector('[data-ba-after]');
+    if (!handle || !after) return;
+    let isDragging = false;
+
+    const setPos = (x) => {
+      const rect = slider.getBoundingClientRect();
+      let pct = ((x - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      after.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      handle.style.left = pct + '%';
+    };
+
+    slider.addEventListener('mousedown', (e) => { isDragging = true; setPos(e.clientX); });
+    window.addEventListener('mousemove', (e) => { if (isDragging) setPos(e.clientX); });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    slider.addEventListener('touchstart', (e) => { isDragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', (e) => { if (isDragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { isDragging = false; });
+  });
+}
+
+/* ---------- Form Handlers ---------- */
+function setupForms() {
+  document.querySelectorAll('[data-booking-form]').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Booking request sent! We will call you shortly.');
+      form.reset();
+    });
+  });
+  document.querySelectorAll('[data-contact-form]').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Message sent! We will get back to you soon.');
+      form.reset();
+    });
+  });
+  document.querySelectorAll('[data-comment-form]').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Comment posted successfully!');
+      form.reset();
+    });
+  });
+  document.querySelectorAll('[data-auth-form]').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Success! Redirecting...');
+      setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+    });
+  });
+  document.querySelectorAll('[data-newsletter-form]').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Subscribed successfully!');
+      form.reset();
+    });
+  });
+}
+
+/* ---------- Expose to global scope for inline scripts ---------- */
+window.setupThemeToggle = setupThemeToggle;
+window.setupRtlToggle = setupRtlToggle;
+window.setupPasswordToggles = setupPasswordToggles;
+window.setupForms = setupForms;
+window.showToast = showToast;
+window.icon = icon;
+
+/* ---------- Init ---------- */
+function initApp() {
+  injectHeader(detectActivePage());
+  injectFooter();
+  setupScrollAnimations();
+  setupCounters();
+  setupPasswordToggles();
+  setupFaq();
+  setupFaqTabs();
+  setupBeforeAfter();
+  setupForms();
+}
+
+function detectActivePage() {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  if (path === '' || path === 'index.html' || path === 'home-2.html') return 'home';
+  if (path === 'about-us.html') return 'about';
+  if (path === 'services.html' || path.startsWith('service-')) return 'services';
+  if (path === 'pricing.html') return 'pricing';
+  if (path === 'blog.html' || path.startsWith('blog-details-')) return 'blog';
+  if (path === 'contact.html') return 'contact';
+  return '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initApp();
+});

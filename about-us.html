@@ -1,447 +1,421 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1d83f5" />
-  <title>About Us | AquaFix Plumbing — Hyderabad's Trusted Plumbers Since 2011</title>
-  <meta name="description"
-    content="Learn about AquaFix Plumbing — Hyderabad's trusted plumbing company. Our story, mission, vision, core values, certified master plumbers, and 15 years of excellence." />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — AquaFix Plumbing</title>
+  <meta name="description" content="Learn about AquaFix Plumbing — our story, mission, values, certified team, and 15+ years of plumbing excellence.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/about-us.css">
 </head>
-
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <nav class="navbar-custom" id="navbar">
-    <div class="container-page nav-inner">
-      <div class="nav-left">
-        <a class="navbar-brand-custom" href="../index.html"><span class="logo-badge"><i
-              class="bi bi-droplet-half"></i></span><span><span class="logo-name-aqua">Aqua</span><span
-              class="logo-name-fix">Fix</span></span></a>
+  <header class="site-header" id="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand navbar-brand-c" href="index.html" aria-label="AquaFix home">
+          <span class="logo-icon"><i class="bi bi-droplet"></i></span>
+          <span><span class="brand-aqua">Aqua</span><span class="brand-fix">Fix</span></span>
+        </a>
+
+        <div class="header-controls order-lg-last d-flex align-items-center gap-2">
+          <button class="icon-btn rtl-text-btn" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL">
+            RTL
+          </button>
+          <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="bi bi-moon"></i>
+          </button>
+          <a href="login.html" class="btn-login d-none d-lg-inline-flex">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <button class="navbar-toggler navbar-toggler-c d-lg-none" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            
+        <li class="nav-item"><a class="nav-link nav-link-c" href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c active" href="about-us.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="services.html">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="pricing.html">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="blog.html">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="contact.html">Contact</a>
+      </li>
+          </ul>
+          <a href="login.html" class="btn-login d-lg-none mb-2">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+        </div>
       </div>
-      <div class="nav-center"><span class="nav-spacer"></span>
-        <ul class="nav-links">
-          <li class="dropdown-custom"><a class="nav-link-custom" href="#" role="button" aria-haspopup="true">Home <i
-                class="bi bi-chevron-down" style="font-size:.55rem"></i></a>
-            <div class="dropdown-menu-custom" style="min-width:10rem">
-              <a class="dropdown-item-custom" href="index.html">Home 1</a>
-              <a class="dropdown-item-custom" href="home-2.html">Home 2</a>
-            </div>
-          </li>
-          <li><a class="nav-link-custom active" href="about-us.html">About</a></li>
-          <li><a class="nav-link-custom" href="services.html">Services</a></li>
-          <li><a class="nav-link-custom" href="pricing.html">Pricing</a></li>
-          <li><a class="nav-link-custom" href="blogs.html">Blog</a></li>
-          <li><a class="nav-link-custom" href="contact.html">Contact</a></li>
-        </ul><span class="nav-spacer"></span>
-      </div>
-      <div class="nav-right">
-        <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL" title="Toggle RTL"><i
-            class="bi bi-arrow-left-right"></i></button>
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
-        <a href="../login.html" class="btn btn-primary nav-desktop-only" style="font-size:.85rem;padding:.5rem 1rem"><i
-            class="bi bi-box-arrow-in-right"></i> Login</a>
-        <button class="icon-btn nav-mobile-only" id="mobileMenuBtn" aria-label="Open menu"><i class="bi bi-list"
-            style="font-size:1.3rem"></i></button>
+    </nav>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner-section">
+    <div class="page-banner">
+      <img class="banner-bg" src="https://shop.haierindia.com/blog/wp-content/uploads/2025/11/Get-Perfect-Tankless-water-heater-hotels-or-hostels.jpg" alt="Plumbing work background">
+      <div class="overlay"></div>
+      <div class="banner-content animate-on-scroll">
+        <span class="badge-hero" style="margin-bottom:1rem;"><i class="bi-shield-check"></i> Trusted Since 2009</span>
+        <h1>About AquaFix</h1>
+        <p>For over 15 years, we've been the trusted name in plumbing — delivering reliable, professional, and
+          affordable services to thousands of homes and businesses.</p>
+        <div class="breadcrumb-c">
+          <a href="index.html">Home</a> <i class="bi-chevron-right"></i> About Us
+        </div>
       </div>
     </div>
-  </nav>
+  </section>
 
-  <main id="main">
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-      <div class="ph-bg">
-        <img src="https://t4.ftcdn.net/jpg/07/46/84/81/360_F_746848173_IDDySdazGlWd9T8O1IhL5uVJxlUkXHNB.jpg" alt="">
-      </div>
-      <div class="ph-pattern"></div>
-      <div class="ph-orb ph-orb-1"></div>
-      <div class="ph-orb ph-orb-2"></div>
-      <div class="container-page text-center ph-content">
-        <span class="eyebrow"><i class="bi bi-people"></i> About Us</span>
-        <h1 class="section-title" style="margin-top:1.25rem">Plumbing with integrity since 2011</h1>
-        <div class="ph-divider"></div>
-        <p class="lead" style="margin-top:1.5rem;max-width:36rem;margin-inline:auto">AquaFix began with one van, one
-          master plumber, and one promise: treat every home like our own. Fifteen years later, that promise still drives
-          everything we do.</p>
-        <div class="ph-actions justify-content-center">
-          <a href="contact.html" class="btn btn-primary"><i class="bi bi-calendar-check"></i> Book a plumber</a>
+  <!-- Our Story -->
+  <section class="our-story section-padding" style="padding-top: 0;">
+    <div class="container">
+      <div class="story-top-row">
+        <div class="story-images-3 animate-on-scroll">
+          <div class="story-img"><img src="https://plumbingmatchhub.com/images/about/plumb-helping-team.jpg" alt="AquaFix plumber at work" loading="lazy"></div>
+          <div class="story-img"><img src="https://japlumbinginc.ca/wp-content/uploads/2025/02/shutterstock_2485364997-scaled.jpg" alt="Plumbing repair" loading="lazy"></div>
+          <div class="story-img"><img src="https://media.istockphoto.com/id/531884907/photo/two-multi-ethnic-repairmen-work-at-customers-home.jpg?s=612x612&w=0&k=20&c=3ss1io4-yLQjeBFBdB9bn749YfOLOKLcKoFfZeeJ6Pw=" alt="Pipe repair work" loading="lazy"></div>
+        </div>
+        <div class="story-content animate-on-scroll delay-2">
+          <div class="section-title" style="text-align:left; margin:0 0 1.5rem;">
+            <span class="badge-text"><i class="bi-book"></i> Our Story</span>
+            <h2>From a One-Man Shop to a City-Wide Service</h2>
+          </div>
+          <p>AquaFix began in 2009 with a single van, a toolbox, and a simple promise: treat every home like it's
+            our own. What started as a one-person operation has grown into a team of 25 certified plumbers serving
+            the entire metropolitan area.</p>
+          <p>Through every year, every job, and every customer, we've stayed true to our founding principle —
+            quality work at honest prices. That's not just a slogan; it's the reason over 10,000 customers trust us
+            with their plumbing.</p>
         </div>
       </div>
-    </section>
 
-    <!-- COMPANY STORY -->
-    <section style="padding-top:4rem">
-      <div class="container-page">
-        <div class="grid-2" style="align-items:center;gap:4rem">
-          <div class="reveal">
-            <span class="eyebrow">Our story</span>
-            <h2 class="section-title" style="margin-top:1.25rem">From one van to Hyderabad's most trusted plumber</h2>
-            <p style="margin-top:1.5rem;color:var(--text-muted);font-size:1.1rem;line-height:1.7">In 2011, Arjun Reddy
-              started AquaFix with one van and a simple belief: plumbing service in Hyderabad deserved to be honest,
-              punctual, and guaranteed.</p>
-            <p style="margin-top:1rem;color:var(--text-muted);font-size:1.1rem;line-height:1.7">Today, AquaFix has 12
-              service vehicles, 24 licensed plumbers, and serves thousands of homes — but the core never changed:
-              upfront pricing, on-time arrival, and a written guarantee on every job.</p>
+      <div class="vm-cards vm-cards-full">
+        <div class="vm-card animate-on-scroll">
+          <div class="vm-icon"><i class="bi-eye"></i></div>
+          <div class="vm-body">
+            <h4>Our Vision</h4>
+            <p>To be the most trusted plumbing service in the region, known for quality, integrity, and innovation.</p>
           </div>
-          <div class="reveal">
-            <div class="hero-img-wrap" style="border-radius:2rem"><img
-                src="https://plumbingmatchhub.com/images/about/plumb-helping-team.jpg"
-                alt="AquaFix team at work" style="height:26rem" loading="lazy"></div>
+        </div>
+        <div class="vm-card animate-on-scroll delay-2">
+          <div class="vm-icon"><i class="bi-bullseye"></i></div>
+          <div class="vm-body">
+            <h4>Our Mission</h4>
+            <p>To deliver exceptional plumbing solutions that protect homes, conserve water, and exceed expectations.</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- MISSION & VISION -->
-    <section style="background:var(--bg-elev)">
-      <div class="container-page">
-        <div class="grid-2" style="gap:2rem">
-          <div class="reveal card-soft" style="padding:2.5rem"><span class="feature-icon"
-              style="width:56px;height:56px;font-size:1.5rem"><i class="bi bi-bullseye"></i></span>
-            <h2 style="font-size:1.5rem;margin-top:1.25rem">Our Mission</h2>
-            <p style="margin-top:1rem;color:var(--text-muted);font-size:1.1rem;line-height:1.7">To deliver plumbing so
-              reliable and transparent that Hyderabad homeowners never dread calling a plumber. We earn trust one job at
-              a time — with upfront pricing and master craftsmanship.</p>
-          </div>
-          <div class="reveal card-soft" style="padding:2.5rem"><span class="feature-icon"
-              style="width:56px;height:56px;font-size:1.5rem"><i class="bi bi-eye"></i></span>
-            <h2 style="font-size:1.5rem;margin-top:1.25rem">Our Vision</h2>
-            <p style="margin-top:1rem;color:var(--text-muted);font-size:1.1rem;line-height:1.7">To be the plumbing
-              company Hyderabad recommends without hesitation — the name neighbours pass to neighbours, and the standard
-              every other plumber is measured against.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CORE VALUES -->
-    <section>
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Core values</span>
-          <h2 class="section-title" style="margin-top:1.25rem">What we stand for</h2>
-        </div>
-        <div class="grid-4" style="margin-top:3.5rem">
-          <div class="reveal card-soft value-card" style="padding:2rem;text-align:center"><span
-              class="feature-icon mx-auto" style="width:56px;height:56px;font-size:1.5rem"><i
-                class="bi bi-shield-check"></i></span>
-            <h3 style="font-size:1.2rem;margin-top:1.25rem">Integrity</h3>
-            <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">We do what we say. The price you
-              approve is the price you pay.</p>
-          </div>
-          <div class="reveal card-soft value-card" style="padding:2rem;text-align:center"><span
-              class="feature-icon mx-auto" style="width:56px;height:56px;font-size:1.5rem"><i
-                class="bi bi-award"></i></span>
-            <h3 style="font-size:1.2rem;margin-top:1.25rem">Craftsmanship</h3>
-            <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">Master plumbers, premium
-              materials, and code-compliant work.</p>
-          </div>
-          <div class="reveal card-soft value-card" style="padding:2rem;text-align:center"><span
-              class="feature-icon mx-auto" style="width:56px;height:56px;font-size:1.5rem"><i
-                class="bi bi-clock"></i></span>
-            <h3 style="font-size:1.2rem;margin-top:1.25rem">Respect</h3>
-            <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">Your time, your home, and your
-              trust. We treat all three with care.</p>
-          </div>
-          <div class="reveal card-soft value-card" style="padding:2rem;text-align:center"><span
-              class="feature-icon mx-auto" style="width:56px;height:56px;font-size:1.5rem"><i
-                class="bi bi-people"></i></span>
-            <h3 style="font-size:1.2rem;margin-top:1.25rem">Community</h3>
-            <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">We are Hyderabad-born and proud to
-              serve our neighbours.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section style="background:var(--bg-elev)">
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Our team</span>
-          <h2 class="section-title" style="margin-top:1.25rem">The people behind the work</h2>
-          <p class="lead" style="margin-top:1rem">Every AquaFix plumber is licensed, background-checked, and trained to
-            our master-craftsman standard.</p>
-        </div>
-        <div class="grid-4" style="margin-top:3.5rem">
-          <div class="reveal team-card">
-            <div class="team-img">
-              <img src="https://media.gettyimages.com/id/1650830091/photo/young-male-worker-in-an-overall-uniform-posing-at-his-workplace.jpg?s=612x612&w=0&k=20&c=jbCkKUojhVuPgfOlkHT1h9LTfcPqksbpAsf0y93jq64="
-                alt="Arjun Reddy" loading="lazy">
-              <div class="team-overlay">
-                <div class="team-social"><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="#"
-                    aria-label="Twitter"><i class="bi bi-twitter-x"></i></a></div>
-              </div>
-            </div>
-            <div class="team-info">
-              <h3 style="font-size:1.15rem">Arjun Reddy</h3>
-              <p style="font-size:.95rem" class="muted">Founder &amp; Master Plumber</p>
-            </div>
-          </div>
-          <div class="reveal team-card">
-            <div class="team-img"><img
-                src="https://t4.ftcdn.net/jpg/05/35/28/93/360_F_535289317_lrX9mbQwwRd4Bn3kvxL442XjtNJtZxjy.jpg"
-                alt="Anita Reddy" loading="lazy">
-              <div class="team-overlay">
-                <div class="team-social"><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="#"
-                    aria-label="Twitter"><i class="bi bi-twitter-x"></i></a></div>
-              </div>
-            </div>
-            <div class="team-info">
-              <h3 style="font-size:1.15rem">Anita Reddy</h3>
-              <p style="font-size:.95rem" class="muted">Operations Director</p>
-            </div>
-          </div>
-          <div class="reveal team-card">
-            <div class="team-img"><img
-                src="https://img.magnific.com/free-photo/young-happy-man-standing-isolated_171337-1127.jpg?semt=ais_hybrid&w=740&q=80"
-                alt="Vikram Singh" loading="lazy">
-              <div class="team-overlay">
-                <div class="team-social"><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="#"
-                    aria-label="Twitter"><i class="bi bi-twitter-x"></i></a></div>
-              </div>
-            </div>
-            <div class="team-info">
-              <h3 style="font-size:1.15rem">Vikram Singh</h3>
-              <p style="font-size:.95rem" class="muted">Senior Plumber</p>
-            </div>
-          </div>
-          <div class="reveal team-card">
-            <div class="team-img"><img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXEBVTzZR2ZqF7q1_vqJTn_tt78IWZNUF2HF8OD7D75g&s=10"
-                alt="Kavya Rao" loading="lazy">
-              <div class="team-overlay">
-                <div class="team-social">
-                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"aria-label="Twitter"><i class="bi bi-twitter-x"></i></a></div>
-              </div>
-            </div>
-            <div class="team-info">
-              <h3 style="font-size:1.15rem">Kavya Rao</h3>
-              <p style="font-size:.95rem" class="muted">Customer Care Lead</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section>
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Certifications</span>
-          <h2 class="section-title" style="margin-top:1.25rem">Licensed &amp; certified</h2>
-        </div>
-        <div class="grid-3" style="margin-top:3rem">
-          <div class="reveal cert-badge"><span class="cert-icon"><i class="bi bi-patch-check"></i></span>
-            <div>
-              <h3 style="font-size:1.05rem">Master Plumber License #MP-04217</h3>
-              <p style="font-size:.95rem" class="muted">Telangana State Plumbing Authority</p>
-            </div>
-          </div>
-          <div class="reveal cert-badge"><span class="cert-icon"><i class="bi bi-shield-check"></i></span>
-            <div>
-              <h3 style="font-size:1.05rem">Insured &amp; Bonded</h3>
-              <p style="font-size:.95rem" class="muted">₹2 crore liability coverage</p>
-            </div>
-          </div>
-          <div class="reveal cert-badge"><span class="cert-icon"><i class="bi bi-award"></i></span>
-            <div>
-              <h3 style="font-size:1.05rem">ISO 9001:2015 Certified</h3>
-              <p style="font-size:.95rem" class="muted">Quality management system</p>
-            </div>
-          </div>
-          <div class="reveal cert-badge"><span class="cert-icon"><i class="bi bi-droplet-half"></i></span>
-            <div>
-              <h3 style="font-size:1.05rem">WaterSafe Registered</h3>
-              <p style="font-size:.95rem" class="muted">Certified for drinking water systems</p>
-            </div>
-          </div>
-          <div class="reveal cert-badge"><span class="cert-icon"><i class="bi bi-tools"></i></span>
-            <div>
-              <h3 style="font-size:1.05rem">Jaquar Certified Installer</h3>
-              <p style="font-size:.95rem" class="muted">Premium fixture specialist</p>
-            </div>
-          </div>
-          <div class="reveal cert-badge"><span class="cert-icon"><i class="bi bi-building-check"></i></span>
-            <div>
-              <h3 style="font-size:1.05rem">CPWD Enlisted Contractor</h3>
-              <p style="font-size:.95rem" class="muted">Government-approved vendor</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <!-- <section style="background:var(--bg-elev)">
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Achievements</span><h2 class="section-title" style="margin-top:1.25rem">Awards &amp; recognition</h2></div>
-        <div class="grid-3" style="margin-top:3rem">
-          <div class="reveal card-soft" style="padding:2rem;text-align:center"><i class="bi bi-trophy" style="font-size:2.5rem;color:var(--brand-600)"></i><h3 style="font-size:1.15rem;margin-top:1rem">Best Plumber in Hyderabad</h3><p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">Hyderabad Times Readers' Choice 2024</p></div>
-          <div class="reveal card-soft" style="padding:2rem;text-align:center"><i class="bi bi-star-fill" style="font-size:2.5rem;color:var(--accent-500)"></i><h3 style="font-size:1.15rem;margin-top:1rem">4.9/5 Customer Rating</h3><p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">Across 2,400+ verified reviews</p></div>
-          <div class="reveal card-soft" style="padding:2rem;text-align:center"><i class="bi bi-globe" style="font-size:2.5rem;color:var(--brand-600)"></i><h3 style="font-size:1.15rem;margin-top:1rem">Served 10,000+ Homes</h3><p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">Across every Hyderabad neighbourhood</p></div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- TIMELINE -->
-    <section>
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Our journey</span>
-          <h2 class="section-title" style="margin-top:1.25rem">15 years of growth</h2>
-        </div>
-        <div class="timeline" style="margin-top:3rem">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content"><span class="premium-badge" style="font-size:.65rem">2011</span>
-              <h3 style="font-size:1.2rem;margin-top:.75rem">AquaFix is born</h3>
-              <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">Arjun Reddy founds AquaFix with
-                one van and a promise of honest plumbing.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content"><span class="premium-badge" style="font-size:.65rem">2015</span>
-              <h3 style="font-size:1.2rem;margin-top:.75rem">First 1,000 customers</h3>
-              <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">Word-of-mouth referrals push us
-                past 1,000 satisfied homes.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content"><span class="premium-badge" style="font-size:.65rem">2019</span>
-              <h3 style="font-size:1.2rem;margin-top:.75rem">24/7 emergency service</h3>
-              <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">We launch round-the-clock
-                emergency plumbing.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content"><span class="premium-badge" style="font-size:.65rem">2022</span>
-              <h3 style="font-size:1.2rem;margin-top:.75rem">ISO 9001 certification</h3>
-              <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">AquaFix becomes ISO 9001:2015
-                certified for quality management.</p>
-            </div>
-          </div>
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content"><span class="premium-badge" style="font-size:.65rem">2024</span>
-              <h3 style="font-size:1.2rem;margin-top:.75rem">10,000 homes served</h3>
-              <p style="font-size:1rem;line-height:1.65" class="muted;margin-top:.5rem">We cross 10,000 homes served and
-                win Best Plumber in Hyderabad.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- CTA -->
-    <section>
-      <div class="container-page">
-        <div class="reveal emergency-banner emergency-banner-center"
-          style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;text-align:center;padding:3rem 2rem;min-height:18rem">
-          <div>
-            <h2 style="color:#fff;font-size:1.5rem;margin:0">Experience the AquaFix difference</h2>
-            <p style="color:rgba(255,255,255,.9);margin:.5rem 0 0;font-size:.95rem">Join 10,000+ Hyderabad homes that
-              trust AquaFix for honest, reliable plumbing.</p>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:.7rem">
-            <a href="contact.html" class="btn btn-accent"
-              style="font-size:.9rem;padding:.6rem 1.3rem;margin:0;background:#fff;color:var(--accent-700)"> Book a
-              service<i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" id="footer">
-    <div class="pointer-events-none"
-      style="position:absolute;top:-8rem;left:50%;transform:translateX(-50%);width:40rem;height:16rem;border-radius:50%;background:rgba(52,163,255,.2);filter:blur(60px)">
     </div>
-    <div class="pointer-events-none"
-      style="position:absolute;bottom:-8rem;right:0;width:24rem;height:16rem;border-radius:50%;background:rgba(8,207,159,.1);filter:blur(60px)">
-    </div>
-    <div class="container-page" style="position:relative">
-      <div class="grid-4" style="gap:3rem">
-        <div>
-          <a class="navbar-brand-custom" href="../index.html"><span class="logo-badge"><i
-                class="bi bi-droplet-half"></i></span><span><span class="logo-name-aqua">Aqua</span><span
-                class="logo-name-fix">Fix</span></span></a>
-          <p style="margin-top:1.25rem;max-width:24rem;font-size:.875rem;color:rgba(255,255,255,.6)">Reliable, licensed
-            plumbing services for homes and businesses across Hyderabad. Upfront pricing, on-time arrival, and a written
-            guarantee on every job.</p>
-          <div class="flex gap-2" style="margin-top:1.5rem">
-            <a href="#" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-          </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="core-values section-padding">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-heart"></i> Core Values</span>
+        <h2>What We Stand For</h2>
+        <p>These principles guide every decision we make and every pipe we fix.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card animate-on-scroll delay-1">
+          <div class="v-icon"><i class="bi-shield-check"></i></div>
+          <h4>Integrity</h4>
+          <p>We do what's right, even when no one's watching. Honest pricing, honest work, every time.</p>
         </div>
-        <div>
-          <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#fff">Company
-          </h3>
-          <ul
-            style="list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:.75rem;font-size:.875rem">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="blogs.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <div class="value-card animate-on-scroll delay-2">
+          <div class="v-icon"><i class="bi-award"></i></div>
+          <h4>Quality</h4>
+          <p>We never cut corners. Premium materials and expert craftsmanship define everything we do.</p>
         </div>
-        <div>
-          <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#fff">Services
-          </h3>
-          <ul
-            style="list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:.75rem;font-size:.875rem">
-            <li><a href="services/pipe-repair.html">Pipe Repair</a></li>
-            <li><a href="services/bathroom-fitting.html">Bathroom Fitting</a></li>
-            <li><a href="services/drain-cleaning.html">Drain Cleaning</a></li>
-            <li><a href="services/water-heater.html">Water Heaters</a></li>
-            <li><a href="services/emergency-plumbing.html">Emergency Service</a></li>
-          </ul>
+        <div class="value-card animate-on-scroll delay-3">
+          <div class="v-icon"><i class="bi-lightning-charge"></i></div>
+          <h4>Reliability</h4>
+          <p>When we say we'll be there, we're there. On time, every time — that's our promise.</p>
         </div>
-        <div>
-          <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#fff">Get in
-            touch</h3>
-          <ul
-            style="list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:1rem;font-size:.875rem;color:rgba(255,255,255,.6)">
-            <li class="flex gap-2"><i class="bi bi-geo-alt" style="color:var(--brand-400)"></i> Plot 42, Road No 12,
-              Banjara Hills, Hyderabad, Telangana 500034</li>
-            <li class="flex gap-2"><i class="bi bi-telephone" style="color:var(--brand-400)"></i> <a
-                href="tel:+918005550199">+91 80055 50199</a></li>
-            <li class="flex gap-2"><i class="bi bi-envelope" style="color:var(--brand-400)"></i> <a
-                href="mailto:hello@aquafixplumbing.com">hello@aquafixplumbing.com</a></li>
-            <li class="flex gap-2"><i class="bi bi-clock" style="color:var(--brand-400)"></i> Mon–Sat: 7am–8pm · 24/7
-              Emergency</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem;width:100%">Book a job <i
-              class="bi bi-arrow-right"></i></a>
+        <div class="value-card animate-on-scroll delay-4">
+          <div class="v-icon"><i class="bi-flower1"></i></div>
+          <h4>Sustainability</h4>
+          <p>We promote water conservation and eco-friendly practices in every service we provide.</p>
         </div>
       </div>
-      <div class="flex items-center justify-between"
-        style="margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;font-size:.85rem;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:1rem">
-        <p>© <span data-year>2026</span> AquaFix Plumbing. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-          <a href="coming-soon.html">Coming-soon</a>
-          <a href="404.html">404</a>
-          <a href="maintenance.html">Maintenance</a>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section-padding" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-people"></i> Our Team</span>
+        <h2>Meet the Plumbers Behind AquaFix</h2>
+        <p>Our certified, experienced team is the heart of everything we do.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card animate-on-scroll delay-1">
+          <div class="team-img">
+            <img src="https://media.gettyimages.com/id/1650830091/photo/young-male-worker-in-an-overall-uniform-posing-at-his-workplace.jpg?s=612x612&w=0&k=20&c=jbCkKUojhVuPgfOlkHT1h9LTfcPqksbpAsf0y93jq64=" alt="Team member" loading="lazy">
+            <div class="team-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>Robert Hayes</h4>
+            <div class="role">Founder & Master Plumber</div>
+          </div>
         </div>
+        <div class="team-card animate-on-scroll delay-2">
+          <div class="team-img">
+            <img src="https://img.magnific.com/free-photo/young-happy-man-standing-isolated_171337-1127.jpg?semt=ais_hybrid&w=740&q=80" alt="Team member" loading="lazy">
+            <div class="team-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>vijay singh</h4>
+            <div class="role">Senior Plumbing Technician</div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll delay-3">
+          <div class="team-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOixSD6K1bMvfLRhaOLzG0Sy5MMcjXN2xfu3POaUUOjQ&s=10" alt="Team member" loading="lazy">
+            <div class="team-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>pratap</h4>
+            <div class="role">Lead Pipe Specialist</div>
+          </div>
+        </div>
+        <div class="team-card animate-on-scroll delay-4">
+          <div class="team-img">
+            <img src="https://media.istockphoto.com/id/1049769132/photo/smiling-handsome-plumber-standing-with-crossed-arms-and-looking-at-camera-in-kitchen.jpg?s=612x612&w=0&k=20&c=ut1vzCJ_E7ywFF-SeLPUocds1yRU0kF3kKqGtHPzAgQ=" alt="Team member" loading="lazy">
+            <div class="team-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h4>David</h4>
+            <div class="role">Water Heater Expert</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="certifications section-padding">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-award"></i> Certifications</span>
+        <h2>Licensed, Certified & Trusted</h2>
+        <p>Our credentials reflect our commitment to professional excellence and safety.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card animate-on-scroll delay-1">
+          <div class="cert-icon"><i class="bi-patch-check"></i></div>
+          <h4>Licensed Plumber</h4>
+          <p>State License #PL-2009-4578</p>
+        </div>
+        <div class="cert-card animate-on-scroll delay-2">
+          <div class="cert-icon"><i class="bi-shield"></i></div>
+          <h4>Fully Insured</h4>
+          <p>$2M Liability Coverage</p>
+        </div>
+        <div class="cert-card animate-on-scroll delay-3">
+          <div class="cert-icon"><i class="bi-flower1"></i></div>
+          <h4>EPA Certified</h4>
+          <p>WaterSense Partner</p>
+        </div>
+        <div class="cert-card animate-on-scroll delay-4">
+          <div class="cert-icon"><i class="bi-star-fill"></i></div>
+          <h4>BBB A+ Rated</h4>
+          <p>Accredited Business</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Journey (Vertical Timeline) -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-git-branch"></i> Our Journey</span>
+        <h2>A Legacy of Plumbing Excellence</h2>
+        <p>From humble beginnings to becoming the city's most trusted plumbing service.</p>
+      </div>
+      <div class="journey-timeline">
+        <div class="journey-item animate-on-scroll">
+          <div class="journey-card">
+            <span class="journey-year">2009</span>
+            <h4>The Beginning</h4>
+            <p>Robert Hayes founded AquaFix with a single van and a vision for honest, quality plumbing service.</p>
+          </div>
+        </div>
+        <div class="journey-item animate-on-scroll">
+          <div class="journey-card">
+            <span class="journey-year">2012</span>
+            <h4>First Expansion</h4>
+            <p>Grew to a team of 5 plumbers and opened our first dedicated service center in Banjara Hills, Hyderabad.</p>
+          </div>
+        </div>
+        <div class="journey-item animate-on-scroll">
+          <div class="journey-card">
+            <span class="journey-year">2016</span>
+            <h4>City-Wide Coverage</h4>
+            <p>Expanded services across Hyderabad and nearby areas with a fleet of 10 fully-equipped service vehicles.</p>
+          </div>
+        </div>
+        <div class="journey-item animate-on-scroll">
+          <div class="journey-card">
+            <span class="journey-year">2020</span>
+            <h4>Technology Upgrade</h4>
+            <p>Invested in advanced diagnostic tools including thermal imaging and trenchless repair technology.</p>
+          </div>
+        </div>
+        <div class="journey-item animate-on-scroll">
+          <div class="journey-card">
+            <span class="journey-year">2024</span>
+            <h4>10,000 Customers</h4>
+            <p>Crossed the milestone of 10,000 happy customers and launched our 24/7 emergency service line.</p>
+          </div>
+        </div>
+        <div class="journey-item animate-on-scroll">
+          <div class="journey-card">
+            <span class="journey-year">2026</span>
+            <h4>Looking Forward</h4>
+            <p>Continuing to innovate with eco-friendly plumbing solutions and expanding our team of master plumbers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box animate-on-scroll">
+        <h2>Need a Plumber You Can Trust?</h2>
+        <p>Join the thousands of homeowners who rely on AquaFix for all their plumbing needs. Book your service today.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="contact.html" class="btn btn-white btn-lg">
+            <i class="bi-calendar-check"></i> Book a Service
+          </a>
+          <a href="services.html" class="btn btn-outline-white btn-lg">
+            <i class="bi-wrench"></i> Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-brand">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="logo-icon"><i class="bi bi-droplet"></i></span>
+              <span class="brand-name"><span class="brand-aqua">Aqua</span><span class="brand-fix">Fix</span></span>
+            </div>
+            <p class="footer-text">
+              Reliable plumbing and pipe repair services you can trust. From emergency leaks to full bathroom
+              installations, our certified plumbers deliver quality workmanship every time.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Services</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-pipe-repair.html"><i class="bi bi-chevron-right"></i> Pipe Repair</a></li>
+            <li><a href="service-bathroom-fitting.html"><i class="bi bi-chevron-right"></i> Bathroom Fitting</a></li>
+            <li><a href="service-drain-cleaning.html"><i class="bi bi-chevron-right"></i> Drain Cleaning</a></li>
+            <li><a href="service-water-heater.html"><i class="bi bi-chevron-right"></i> Water Heaters</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> All Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div class="footer-contact-item">
+            <span class="icon-wrap"><i class="bi bi-geo-alt"></i></span>
+            <div>
+              <div class="label">Address</div>
+              <div class="value">Plot No 42, Road No 12, Banjara Hills, Hyderabad, Telangana 500034</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon-wrap"><i class="bi bi-telephone"></i></span>
+            <div>
+              <div class="label">Emergency Hotline</div>
+              <div class="value">+91 90000 12345</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon-wrap"><i class="bi bi-envelope"></i></span>
+            <div>
+              <div class="label">Email</div>
+              <div class="value">support@aquafix.in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AquaFix Plumbing. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a href="404.html">404</a></li>
+          <li><a href="maintenance.html">Maintenance</a></li>
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/validation.js"></script>
-</body>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
 </html>

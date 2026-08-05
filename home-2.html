@@ -1,566 +1,518 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1d83f5" />
-  <title>AquaFix Plumbing — Premium Home Plumbing Experts | Hyderabad</title>
-  <meta name="description"
-    content="AquaFix delivers premium plumbing services across Hyderabad — from luxury bathroom installations to emergency pipe repairs. Master plumbers, flat-rate pricing, 10-year guarantee." />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaFix — Premium Plumbing Services | Home 2</title>
+  <meta name="description" content="Full-screen premium plumbing service showcase. See our services, before & after transformations, and client stories.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/home-2.css">
 </head>
-
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <nav class="navbar-custom" id="navbar">
-    <div class="container-page nav-inner">
-      <div class="nav-left">
-        <a class="navbar-brand-custom" href="../index.html"><span class="logo-badge"><i
-              class="bi bi-droplet-half"></i></span><span><span class="logo-name-aqua">Aqua</span><span
-              class="logo-name-fix">Fix</span></span></a>
+  <header class="site-header" id="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand navbar-brand-c" href="index.html" aria-label="AquaFix home">
+          <span class="logo-icon"><i class="bi bi-droplet"></i></span>
+          <span><span class="brand-aqua">Aqua</span><span class="brand-fix">Fix</span></span>
+        </a>
+
+        <div class="header-controls order-lg-last d-flex align-items-center gap-2">
+          <button class="icon-btn rtl-text-btn" id="rtl-toggle" aria-label="Toggle RTL" title="Toggle RTL">
+            RTL
+          </button>
+          <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="bi bi-moon"></i>
+          </button>
+          <a href="login.html" class="btn-login d-none d-lg-inline-flex">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+          <button class="navbar-toggler navbar-toggler-c d-lg-none" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            
+        <li class="nav-item"><a class="nav-link nav-link-c active" href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="about-us.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="services.html">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="pricing.html">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="blog.html">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-c " href="contact.html">Contact</a>
+      </li>
+          </ul>
+          <a href="login.html" class="btn-login d-lg-none mb-2">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </a>
+        </div>
       </div>
-      <div class="nav-center"><span class="nav-spacer"></span>
-        <ul class="nav-links">
-          <li class="dropdown-custom"><a class="nav-link-custom" href="#" role="button" aria-haspopup="true">Home <i
-                class="bi bi-chevron-down" style="font-size:.55rem"></i></a>
-            <div class="dropdown-menu-custom" style="min-width:10rem">
-              <a class="dropdown-item-custom" href="index.html">Home 1</a>
-              <a class="dropdown-item-custom active" href="home-2.html">Home 2</a>
-            </div>
-          </li>
-          <li><a class="nav-link-custom" href="about-us.html">About</a></li>
-          <li><a class="nav-link-custom" href="services.html">Services</a></li>
-          <li><a class="nav-link-custom" href="pricing.html">Pricing</a></li>
-          <li><a class="nav-link-custom" href="blogs.html">Blog</a></li>
-          <li><a class="nav-link-custom" href="contact.html">Contact</a></li>
-        </ul><span class="nav-spacer"></span>
-      </div>
-      <div class="nav-right">
-        <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL" title="Toggle RTL"><i
-            class="bi bi-arrow-left-right"></i></button>
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
-        <a href="../login.html" class="btn btn-primary nav-desktop-only" style="font-size:.85rem;padding:.5rem 1rem"><i
-            class="bi bi-box-arrow-in-right"></i> Login</a>
-        <!-- <a href="contact.html" class="btn btn-ghost nav-desktop-only" style="font-size:.85rem;padding:.5rem 1.1rem"><i class="bi bi-gem"></i> Book Consultation</a> -->
-        <button class="icon-btn nav-mobile-only" id="mobileMenuBtn" aria-label="Open menu"><i class="bi bi-list"
-            style="font-size:1.3rem"></i></button>
+    </nav>
+  </header>
+
+  <!-- Full Screen Hero -->
+  <section class="hero-fullscreen">
+    <div class="hero-bg">
+      <img src="https://cdn.mos.cms.futurecdn.net/CjkJ4HEyJ5v62CPmWktxd3.jpg" alt="Professional plumber at work" loading="eager">
+    </div>
+    <div class="container">
+      <div class="hero-content animate-on-scroll">
+        <span class="badge-hero">
+          <i class="bi-shield-check"></i> Premium Plumbing Services Since 2009
+        </span>
+        <h1>Plumbing Done Right,<br>The First Time</h1>
+        <p>Experience the difference with AquaFix — where cutting-edge technology meets old-fashioned craftsmanship.
+          Your home deserves nothing less than premium plumbing.</p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-primary-c btn-lg">
+            <i class="bi-calendar-check"></i> Schedule Service
+          </a>
+          <a href="services.html" class="btn btn-primary-c btn-lg">
+            <i class="bi-arrow-right"></i> Explore Services
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num"><span data-counter="15000" data-suffix="+">0</span></div>
+            <div class="label">Projects Completed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num"><span data-counter="15" data-suffix="+">0</span></div>
+            <div class="label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num"><span data-counter="98" data-suffix="%">0</span></div>
+            <div class="label">Satisfaction Rate</div>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
+    <div class="scroll-indicator">
+      Scroll
+      <i class="bi-chevron-down"></i>
+    </div>
+  </section>
 
-  <main id="main">
-    <!-- 1. FULL-WIDTH HERO (different from Home 1's split layout) -->
-    <section class="video-hero">
-      <div class="video-hero-bg">
-        <img src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Master plumber at work">
-      </div>
-      <div class="video-hero-overlay"></div>
-      <div class="container-page video-hero-content text-center">
-        <span class="eyebrow"
-          style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3);backdrop-filter:blur(10px)"><i
-            class="bi bi-award"></i> Hyderabad's premium plumbing experts</span>
-        <h1
-          style="margin-top:1.5rem;color:#fff;font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.05">
-          Craftsmanship in every <span
-            style="background:linear-gradient(135deg,var(--brand-400),var(--accent-400));-webkit-background-clip:text;background-clip:text;color:transparent">pipe
-            &amp; fixture</span></h1>
-        <p style="margin:1.5rem auto 0;max-width:36rem;color:rgba(255,255,255,.85);font-size:1.1rem">From designer
-          bathroom installations to emergency leak repairs — AquaFix brings precision engineering, premium materials,
-          and master plumbers to every home in Hyderabad.</p>
-        <div class="flex flex-wrap justify-center gap-2" style="margin-top:2.5rem">
-          <a href="contact.html" class="btn btn-accent" style="font-size:1rem;padding:.85rem 2rem">Get a free quote <i
-              class="bi bi-arrow-right"></i></a>
-          <!-- <a href="tel:+918005550199" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);font-size:1rem;padding:.85rem 2rem"><i class="bi bi-telephone"></i> +91 80055 50199</a> -->
+  <!-- Stats Count -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card animate-on-scroll delay-1">
+          <div class="stat-icon"><i class="bi-clock"></i></div>
+          <div class="stat-num"><span data-counter="60" data-suffix=" min">0</span></div>
+          <div class="stat-label">Average Response Time</div>
         </div>
-      </div>
-    </section>
-
-    <!-- 1b. SERVICES MARQUEE -->
-    <!-- <section class="marquee marquee-services" style="padding:1.1rem 0;background:linear-gradient(90deg,var(--brand-600),var(--brand-700));color:#fff;overflow:hidden;border-top:1px solid rgba(255,255,255,.1)">
-      <div class="marquee-track">
-        <span><i class="bi bi-wrench"></i> Pipe Repair &amp; Replacement</span>
-        <span><i class="bi bi-water"></i> Drain Cleaning</span>
-        <span><i class="bi bi-droplet"></i> Bathroom Fitting</span>
-        <span><i class="bi bi-thermometer-half"></i> Water Heater Installation</span>
-        <span><i class="bi bi-wrench"></i> Pipe Repair &amp; Replacement</span>
-        <span><i class="bi bi-water"></i> Drain Cleaning</span>
-        <span><i class="bi bi-droplet"></i> Bathroom Fitting</span>
-        <span><i class="bi bi-thermometer-half"></i> Water Heater Installation</span>
-      </div>
-    </section> -->
-
-    <!-- 2. ANIMATED STATS COUNTERS (not in Home 1) -->
-    <section>
-      <div class="container-page">
-        <div class="grid-4">
-          <div class="reveal counter-card">
-            <div class="counter-num" data-counter="2400" data-suffix="+">0</div>
-            <div class="counter-label">Happy clients</div>
-          </div>
-          <div class="reveal counter-card">
-            <div class="counter-num" data-counter="500" data-suffix="+">0</div>
-            <div class="counter-label">Luxury baths delivered</div>
-          </div>
-          <div class="reveal counter-card">
-            <div class="counter-num" data-counter="15" data-suffix="+">0</div>
-            <div class="counter-label">Years of craftsmanship</div>
-          </div>
-          <div class="reveal counter-card">
-            <div class="counter-num" data-counter="45" data-suffix=" min">0</div>
-            <div class="counter-label">Avg arrival time</div>
-          </div>
+        <div class="stat-card animate-on-scroll delay-2">
+          <div class="stat-icon"><i class="bi-people"></i></div>
+          <div class="stat-num"><span data-counter="10000" data-suffix="+">0</span></div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-card animate-on-scroll delay-3">
+          <div class="stat-icon"><i class="bi-wrench"></i></div>
+          <div class="stat-num"><span data-counter="15000" data-suffix="+">0</span></div>
+          <div class="stat-label">Jobs Completed</div>
+        </div>
+        <div class="stat-card animate-on-scroll delay-4">
+          <div class="stat-icon"><i class="bi-star-fill"></i></div>
+          <div class="stat-num"><span data-counter="4" data-suffix=".9★">0</span></div>
+          <div class="stat-label">Average Rating</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 3. SERVICES — alternating image+text rows (not 4 grid cards like Home 1) -->
-    <section style="background:var(--bg-elev)">
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">What we do</span>
-          <h2 class="section-title" style="margin-top:1.25rem">Plumbing services, done right</h2>
-          <p class="lead" style="margin-top:1rem">From a dripping tap to a full bathroom overhaul — our certified
-            plumbers deliver flawless work with premium materials and a written guarantee.</p>
+  <!-- What We Do (Alternating) -->
+  <section class="what-we-do">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-layers"></i> What We Do</span>
+        <h2>Our Core Plumbing Services</h2>
+        <p>From everyday repairs to complex installations, we deliver excellence in every pipe, drain, and fixture.</p>
+      </div>
+
+      <div class="service-row">
+        <div class="service-image">
+          <span class="img-badge">Pipe Repair</span>
+          <img src="https://d17x34b9fcvxk7.cloudfront.net/static/marketing/images/hero-backgrounds/plumber.jpg" alt="Pipe repair service" loading="lazy">
         </div>
-
-        <div style="margin-top:4rem;display:flex;flex-direction:column;gap:4rem">
-          <!-- Row 1 — image left -->
-          <div class="reveal grid-2" style="align-items:center;gap:3rem">
-            <div class="hero-img-wrap" style="border-radius:1.5rem"><img
-                src="https://images.pexels.com/photos/16509869/pexels-photo-16509869.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Pipe repair" style="height:18rem" loading="lazy"></div>
-            <div>
-              <span class="premium-badge" style="font-size:.7rem">01 — Pipe Repair</span>
-              <h3 style="font-size:1.6rem;margin-top:1rem">Pipe Repair &amp; Replacement</h3>
-              <p style="font-size:1.05rem;line-height:1.65" class="muted;margin-top:.75rem">Precision leak detection,
-                burst pipe fixes, and trenchless repiping with minimal disruption to your home. We use premium PEX and
-                copper for lasting results.</p>
-              <div class="flex flex-wrap gap-2" style="margin-top:1.25rem">
-                <span class="badge-soft badge-brand"><i class="bi bi-check-circle-fill"></i> Leak detection</span>
-                <span class="badge-soft badge-brand"><i class="bi bi-check-circle-fill"></i> Trenchless repipe</span>
-                <span class="badge-soft badge-brand"><i class="bi bi-check-circle-fill"></i> 10-year warranty</span>
-              </div>
-              <a href="services/pipe-repair.html" class="btn btn-primary"
-                style="margin-top:1.5rem;font-size:.9rem;padding:.65rem 1.5rem">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <!-- Row 2 — image right -->
-          <div class="reveal grid-2" style="align-items:center;gap:3rem;direction:rtl">
-            <div class="hero-img-wrap" style="border-radius:1.5rem;direction:ltr"><img
-                src="https://lirp.cdn-website.com/b4cb66e6/dms3rep/multi/opt/image2-640w.png" alt="Drain cleaning"
-                style="height:18rem" loading="lazy"></div>
-            <div style="direction:ltr">
-              <span class="premium-badge" style="font-size:.7rem">02 — Drain Cleaning</span>
-              <h3 style="font-size:1.6rem;margin-top:1rem">Drain Cleaning</h3>
-              <p style="font-size:1.05rem;line-height:1.65" class="muted;margin-top:.75rem">High-pressure hydro-jetting,
-                motorised augers, and HD camera inspections to clear stubborn blockages — from kitchen sinks to main
-                sewer lines.</p>
-              <div class="flex flex-wrap gap-2" style="margin-top:1.25rem">
-                <span class="badge-soft badge-accent"><i class="bi bi-check-circle-fill"></i> Hydro-jetting</span>
-                <span class="badge-soft badge-accent"><i class="bi bi-check-circle-fill"></i> Camera inspection</span>
-                <span class="badge-soft badge-accent"><i class="bi bi-check-circle-fill"></i> Same-day service</span>
-              </div>
-              <a href="services/drain-cleaning.html" class="btn btn-primary"
-                style="margin-top:1.5rem;font-size:.9rem;padding:.65rem 1.5rem">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <!-- Row 3 — image left -->
-          <div class="reveal grid-2" style="align-items:center;gap:3rem">
-            <div class="hero-img-wrap" style="border-radius:1.5rem"><img
-                src="https://images.pexels.com/photos/6957081/pexels-photo-6957081.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Bathroom fitting" style="height:18rem" loading="lazy"></div>
-            <div>
-              <span class="premium-badge" style="font-size:.7rem">03 — Bathroom Fitting</span>
-              <h3 style="font-size:1.6rem;margin-top:1rem">Bathroom Fitting</h3>
-              <p style="font-size:1.05rem;line-height:1.65" class="muted;margin-top:.75rem">Designer sanitaryware,
-                concealed cisterns, rain showers, and complete bath transformations. We bring your vision to life with
-                premium fixtures and flawless installation.</p>
-              <div class="flex flex-wrap gap-2" style="margin-top:1.25rem">
-                <span class="badge-soft badge-brand"><i class="bi bi-check-circle-fill"></i> Designer fixtures</span>
-                <span class="badge-soft badge-brand"><i class="bi bi-check-circle-fill"></i> Concealed plumbing</span>
-                <span class="badge-soft badge-brand"><i class="bi bi-check-circle-fill"></i> Full remodels</span>
-              </div>
-              <a href="services/bathroom-fitting.html" class="btn btn-primary"
-                style="margin-top:1.5rem;font-size:.9rem;padding:.65rem 1.5rem">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <!-- Row 4 — image right -->
-          <div class="reveal grid-2" style="align-items:center;gap:3rem;direction:rtl">
-            <div class="hero-img-wrap" style="border-radius:1.5rem;direction:ltr"><img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWr5qOeWP_40Cvqiy760fa9QnmER8YPrgblsvL9aiEQ&s=10"
-                alt="Water heater" style="height:18rem" loading="lazy"></div>
-            <div style="direction:ltr">
-              <span class="premium-badge" style="font-size:.7rem">04 — Water Heater</span>
-              <h3 style="font-size:1.6rem;margin-top:1rem">Water Heater Installation</h3>
-              <p style="font-size:1.05rem;line-height:1.65" class="muted;margin-top:.75rem">Tank, tankless, and
-                heat-pump geyser installation with energy-efficient upgrades and safe venting. We size, install, and
-                commission your system for years of reliable hot water.</p>
-              <div class="flex flex-wrap gap-2" style="margin-top:1.25rem">
-                <span class="badge-soft badge-accent"><i class="bi bi-check-circle-fill"></i> Tankless systems</span>
-                <span class="badge-soft badge-accent"><i class="bi bi-check-circle-fill"></i> Energy efficient</span>
-                <span class="badge-soft badge-accent"><i class="bi bi-check-circle-fill"></i> Safe venting</span>
-              </div>
-              <a href="services/water-heater.html" class="btn btn-primary"
-                style="margin-top:1.5rem;font-size:.9rem;padding:.65rem 1.5rem">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
+        <div class="service-content">
+          <div class="service-num">01</div>
+          <h3>Pipe Repair & Replacement</h3>
+          <p>Whether it's a minor leak or a major pipe burst, our team provides swift and durable pipe repair solutions.
+            We use high-quality materials and modern techniques to ensure your plumbing system lasts for years.</p>
+          <ul>
+            <li><i class="bi-check-circle-fill"></i> Leak detection and repair</li>
+            <li><i class="bi-check-circle-fill"></i> Full pipe replacement</li>
+            <li><i class="bi-check-circle-fill"></i> Copper and PEX installation</li>
+          </ul>
+          <a href="service-pipe-repair.html" class="btn btn-primary-c">
+            Learn More <i class="bi-arrow-right"></i>
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- 4. BEFORE & AFTER SLIDER (interactive — not in Home 1) -->
-    <section>
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Before &amp; after</span>
-          <h2 class="section-title" style="margin-top:1.25rem">See the transformation</h2>
-          <p class="lead" style="margin-top:1rem">Drag the slider to see how we turned an outdated bathroom into a
-            luxury retreat.</p>
+      <div class="service-row reverse">
+        <div class="service-image">
+          <span class="img-badge">Bathroom</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlZlG2N5FFmDH94l41e0nuUXCX_txv_tUG3q4YPf647X5lsU2FZEAmaGlz&s=10" alt="Bathroom fitting service" loading="lazy">
         </div>
-        <div class="reveal maxw-3xl mx-auto" style="margin-top:3rem">
-          <div class="ba-slider" style="height:28rem">
-            <img src="https://st.hzcdn.com/simgs/c1e15ade061998e8_14-9377/_.jpg"
-              alt="Before" style="height:28rem">
-            <div class="ba-after">
-              <img src="https://st.hzcdn.com/simgs/bd6130f30391edd2_4-2535/home-design.jpg"
-                alt="After" style="height:28rem"></div>
-            <div class="ba-handle"></div>
-            <span class="ba-label ba-label-before">Before</span>
-            <span class="ba-label ba-label-after">After</span>
-          </div>
+        <div class="service-content">
+          <div class="service-num">02</div>
+          <h3>Bathroom Fitting & Remodel</h3>
+          <p>Transform your bathroom into a modern oasis. From simple fixture upgrades to complete renovations,
+            our team delivers beautiful, functional bathrooms tailored to your style and budget.</p>
+          <ul>
+            <li><i class="bi-check-circle-fill"></i> Shower and tub installation</li>
+            <li><i class="bi-check-circle-fill"></i> Faucet and sink fitting</li>
+            <li><i class="bi-check-circle-fill"></i> Complete bathroom remodel</li>
+          </ul>
+          <a href="service-bathroom-fitting.html" class="btn btn-primary-c">
+            Learn More <i class="bi-arrow-right"></i>
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- 5. WHY CHOOSE US — image + feature list split (not 4 centered cards like Home 1) -->
-    <section style="background:var(--bg-elev)">
-      <div class="container-page">
-        <div class="grid-2" style="align-items:center;gap:4rem">
-          <div class="reveal relative">
-            <div class="hero-img-wrap" style="border-radius:2rem">
-              <img src="https://japlumbinginc.ca/wp-content/uploads/2025/02/shutterstock_2485364997-scaled.jpg"
-                alt="Professional plumber" style="height:30rem" loading="lazy">
-            </div>
-            <div class="float-card animate-float" style="inset-inline-end:-1.5rem;bottom:2rem">
-              <div class="flex items-center gap-2">
-                <span class="feature-icon" style="width:44px;height:44px;font-size:1.1rem"><i
-                    class="bi bi-people"></i></span>
-                <div>
-                  <div style="font-size:.7rem" class="muted">Certified team</div>
-                  <div style="font-family:var(--font-display);font-weight:700;font-size:.9rem">50+ plumbers</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="reveal"><span class="eyebrow">Why AquaFix</span>
-              <h2 class="section-title" style="margin-top:1.25rem">Built on trust, delivered with precision</h2>
-              <p class="lead" style="margin-top:1rem">We do not just fix pipes — we deliver peace of mind. Every job is
-                backed by certified expertise, transparent pricing, and a commitment to your home.</p>
-            </div>
-            <div class="grid-2" style="gap:1.5rem;margin-top:2rem">
-              <div class="reveal card-soft why-card" style="padding:1.5rem"><span class="feature-icon"
-                  style="width:48px;height:48px;font-size:1.3rem"><i class="bi bi-cash-coin"></i></span>
-                <h3 style="font-size:1.05rem;margin-top:1rem">Transparent flat rates</h3>
-                <p style="font-size:.9rem;line-height:1.6" class="muted;margin-top:.4rem">Approved quote, final price.
-                  Never a penny more.</p>
-              </div>
-              <div class="reveal card-soft why-card" style="padding:1.5rem"><span class="feature-icon"
-                  style="width:48px;height:48px;font-size:1.3rem"><i class="bi bi-clock-history"></i></span>
-                <h3 style="font-size:1.05rem;margin-top:1rem">45-min emergency response</h3>
-                <p style="font-size:.9rem;line-height:1.6" class="muted;margin-top:.4rem">Day or night, a master plumber
-                  at your door.</p>
-              </div>
-              <div class="reveal card-soft why-card" style="padding:1.5rem"><span class="feature-icon"
-                  style="width:48px;height:48px;font-size:1.3rem"><i class="bi bi-shield-check"></i></span>
-                <h3 style="font-size:1.05rem;margin-top:1rem">10-year written warranty</h3>
-                <p style="font-size:.9rem;line-height:1.6" class="muted;margin-top:.4rem">Premium materials, guaranteed
-                  workmanship.</p>
-              </div>
-              <div class="reveal card-soft why-card" style="padding:1.5rem"><span class="feature-icon"
-                  style="width:48px;height:48px;font-size:1.3rem"><i class="bi bi-geo-alt"></i></span>
-                <h3 style="font-size:1.05rem;margin-top:1rem">All Hyderabad covered</h3>
-                <p style="font-size:.9rem;line-height:1.6" class="muted;margin-top:.4rem">From Banjara Hills to Tellapur
-                  — we reach you.</p>
-              </div>
-            </div>
-          </div>
+      <div class="service-row">
+        <div class="service-image">
+          <span class="img-badge">Drains</span>
+          <img src="https://img.magnific.com/free-photo/asian-plumber-blue-overalls-clearing-blockage-drain_1098-17773.jpg" alt="Drain cleaning service" loading="lazy">
+        </div>
+        <div class="service-content">
+          <div class="service-num">03</div>
+          <h3>Drain Cleaning & Unclogging</h3>
+          <p>Say goodbye to slow drains and backups. Our advanced drain cleaning service clears blockages and keeps
+            your plumbing system flowing. We use safe, effective methods that protect your pipes.</p>
+          <ul>
+            <li><i class="bi-check-circle-fill"></i> Hydro-jetting service</li>
+            <li><i class="bi-check-circle-fill"></i> Camera inspection</li>
+            <li><i class="bi-check-circle-fill"></i> Preventive maintenance</li>
+          </ul>
+          <a href="service-drain-cleaning.html" class="btn btn-primary-c">
+            Learn More <i class="bi-arrow-right"></i>
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- 7. HORIZONTAL TIMELINE PROCESS (not 4 step icons like Home 1) -->
-    <section style="background:var(--bg-elev)">
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">How it works</span>
-          <h2 class="section-title" style="margin-top:1.25rem">Four steps to a perfect fix</h2>
-          <p class="lead" style="margin-top:1rem">From your first call to the final handshake, we make the entire
-            process effortless and transparent.</p>
+      <div class="service-row reverse">
+        <div class="service-image">
+          <span class="img-badge">Water Heater</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWr5qOeWP_40Cvqiy760fa9QnmER8YPrgblsvL9aiEQ&s=10" alt="Water heater installation service" loading="lazy">
         </div>
-        <div class="timeline-horizontal" style="margin-top:3rem">
-          <div class="timeline-horizontal-track">
-            <div class="timeline-h-item reveal">
-              <div class="timeline-h-dot"></div>
-              <div class="timeline-h-content"><span class="premium-badge" style="font-size:.65rem">Step 01</span>
-                <h3 style="font-size:1.15rem;margin-top:.75rem">Reach out</h3>
-                <p style="font-size:.95rem;line-height:1.6" class="muted;margin-top:.5rem">Call our hotline or book
-                  online. Pick a slot that suits you — same-day available.</p>
-              </div>
-            </div>
-            <div class="timeline-h-item reveal">
-              <div class="timeline-h-dot"></div>
-              <div class="timeline-h-content"><span class="premium-badge" style="font-size:.65rem">Step 02</span>
-                <h3 style="font-size:1.15rem;margin-top:.75rem">Inspect &amp; quote</h3>
-                <p style="font-size:.95rem;line-height:1.6" class="muted;margin-top:.5rem">Our plumber arrives,
-                  diagnoses the issue, and gives a written flat-rate quote.</p>
-              </div>
-            </div>
-            <div class="timeline-h-item reveal">
-              <div class="timeline-h-dot"></div>
-              <div class="timeline-h-content"><span class="premium-badge" style="font-size:.65rem">Step 03</span>
-                <h3 style="font-size:1.15rem;margin-top:.75rem">Execute flawlessly</h3>
-                <p style="font-size:.95rem;line-height:1.6" class="muted;margin-top:.5rem">Premium materials,
-                  code-compliant installation, and a tidy work area — every time.</p>
-              </div>
-            </div>
-            <div class="timeline-h-item reveal">
-              <div class="timeline-h-dot"></div>
-              <div class="timeline-h-content"><span class="premium-badge" style="font-size:.65rem">Step 04</span>
-                <h3 style="font-size:1.15rem;margin-top:.75rem">Warranty &amp; cleanup</h3>
-                <p style="font-size:.95rem;line-height:1.6" class="muted;margin-top:.5rem">We register your warranty,
-                  walk you through the work, and leave your home spotless.</p>
-              </div>
-            </div>
-          </div>
+        <div class="service-content">
+          <div class="service-num">04</div>
+          <h3>Water Heater Installation</h3>
+          <p>Never run out of hot water again. We install, repair, and maintain both tankless and traditional water
+            heaters, ensuring energy efficiency and reliable hot water for your entire home.</p>
+          <ul>
+            <li><i class="bi-check-circle-fill"></i> Tankless water heater install</li>
+            <li><i class="bi-check-circle-fill"></i> Heater repair and tune-up</li>
+            <li><i class="bi-check-circle-fill"></i> Energy-efficient upgrades</li>
+          </ul>
+          <a href="service-water-heater.html" class="btn btn-primary-c">
+            Learn More <i class="bi-arrow-right"></i>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 8. FEATURED PROJECTS — bento grid (not 3 equal cards like Home 1) -->
-    <!-- <section>
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Featured projects</span><h2 class="section-title" style="margin-top:1.25rem">Recent transformations</h2><p class="lead" style="margin-top:1rem">A look at some of the homes we have recently upgraded across Hyderabad.</p></div>
-        <div style="margin-top:3.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;grid-template-areas:'big big side1' 'side2 side3 side1'">
-          <div class="reveal card-soft" style="overflow:hidden;padding:0;grid-area:big">
-            <div class="img-zoom" style="height:20rem"><img src="https://images.pexels.com/photos/6957081/pexels-photo-6957081.jpeg?auto=compress&cs=tinysrgb&w=900" style="width:100%;height:100%;object-fit:cover" alt="Luxury bathroom" loading="lazy"></div>
-            <div style="padding:1.75rem"><span class="blog-tag" style="background:var(--brand-50);color:var(--brand-700)">Bathroom</span><h3 style="font-size:1.3rem;margin-top:.75rem">Luxury Bath Remodel — Banjara Hills</h3><p style="font-size:1rem;line-height:1.6" class="muted;margin-top:.5rem">Complete overhaul with freestanding tub, marble walls, concealed cistern, and rain shower.</p></div>
-          </div>
-          <div class="reveal card-soft" style="overflow:hidden;padding:0;grid-area:side1">
-            <div class="img-zoom" style="height:24rem"><img src="https://images.pexels.com/photos/3787025/pexels-photo-3787025.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:100%;height:100%;object-fit:cover" alt="Kitchen faucet" loading="lazy"></div>
-            <div style="padding:1.5rem"><span class="blog-tag" style="background:var(--accent-50);color:var(--accent-700)">Kitchen</span><h3 style="font-size:1.15rem;margin-top:.75rem">Kitchen Faucet Upgrade — Kondapur</h3><p style="font-size:.95rem;line-height:1.6" class="muted;margin-top:.5rem">Chrome faucet and sink with new water lines.</p></div>
-          </div>
-          <div class="reveal card-soft" style="overflow:hidden;padding:0;grid-area:side2">
-            <div class="img-zoom" style="height:12rem"><img src="https://images.pexels.com/photos/8141966/pexels-photo-8141966.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:100%;height:100%;object-fit:cover" alt="Patterned tile bath" loading="lazy"></div>
-            <div style="padding:1.5rem"><span class="blog-tag" style="background:var(--warn-50);color:var(--warn-700)">Bathroom</span><h3 style="font-size:1.1rem;margin-top:.5rem">Patterned-Tile Bath — Begumpet</h3></div>
-          </div>
-          <div class="reveal card-soft" style="overflow:hidden;padding:0;grid-area:side3">
-            <div class="img-zoom" style="height:12rem"><img src="https://images.pexels.com/photos/6899357/pexels-photo-6899357.jpeg?auto=compress&cs=tinysrgb&w=600" style="width:100%;height:100%;object-fit:cover" alt="Laundry plumbing" loading="lazy"></div>
-            <div style="padding:1.5rem"><span class="blog-tag" style="background:var(--accent-50);color:var(--accent-700)">Utility</span><h3 style="font-size:1.1rem;margin-top:.5rem">Laundry Setup — Kukatpally</h3></div>
-          </div>
-        </div>
-        <style>
-          @media(max-width:992px){section:last-of-type > div > div[style*="grid-template-areas"]{grid-template-columns:1fr 1fr !important;grid-template-areas:'big big' 'side1 side1' 'side2 side3' !important}}
-          @media(max-width:640px){section:last-of-type > div > div[style*="grid-template-areas"]{grid-template-columns:1fr !important;grid-template-areas:'big' 'side1' 'side2' 'side3' !important}}
-        </style>
+  <!-- Before & After -->
+  <section class="before-after-section">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-git"></i> Transformations</span>
+        <h2>Before & After Results</h2>
+        <p>Drag the slider to see the incredible transformations our team has delivered for homeowners.</p>
       </div>
-    </section> -->
-
-    <!-- 9. TESTIMONIALS — different people from Home 1 -->
-    <section style="background:var(--bg-elev)">
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">Client stories</span>
-          <h2 class="section-title" style="margin-top:1.25rem">What Hyderabad says about us</h2>
+      <div class="ba-grid">
+        <div class="ba-slider animate-on-scroll delay-1" data-ba-slider>
+          <img data-ba-before src="https://t3.ftcdn.net/jpg/05/96/81/52/360_F_596815240_PjBQBhuCDmHgPjPSYqbaKeffIRhmduPi.jpg" alt="Bathroom before renovation">
+          <img data-ba-after src="https://images.unsplash.com/photo-1634835678045-6c8933bb8a5b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmludGFnZSUyMGJhdGhyb29tfGVufDB8fDB8fHww" alt="Bathroom after renovation">
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+          <div data-ba-handle></div>
         </div>
-        <div class="grid-3" style="margin-top:3.5rem">
-          <article class="reveal card-soft testimonial-card" style="padding:2rem"><i class="bi bi-quote"
-              style="font-size:2rem;color:var(--brand-300)"></i>
-            <div class="stars" style="margin-top:.5rem">★★★★★</div>
-            <p style="margin-top:1rem;flex:1;font-size:1rem;line-height:1.65">"AquaFix installed our entire bathroom —
-              rain shower, wall-mounted toilet, the works. Flawless execution and they cleaned up every speck of dust."
+        <div class="ba-slider animate-on-scroll delay-2" data-ba-slider>
+          <img data-ba-before src="https://www.cera-india.com/sites/default/files/2022-06/Handmade%20sinks%20banner_Mobile.jpg" alt="Kitchen plumbing before">
+          <img data-ba-after src="https://cdn.shopify.com/s/files/1/0434/9149/1991/files/vintage-kitchen-sink.jpg?v=1747801443" alt="Kitchen plumbing after">
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+          <div data-ba-handle></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why AquaFix (Premium) -->
+  <section class="why-premium">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-award"></i> Premium Service</span>
+        <h2>Why AquaFix is the Premium Choice</h2>
+        <p>We don't just fix pipes — we deliver a premium plumbing experience from start to finish.</p>
+      </div>
+      <div class="premium-grid">
+        <div class="premium-card animate-on-scroll delay-1">
+          <div class="premium-icon"><i class="bi-gem"></i></div>
+          <h4>Premium Materials</h4>
+          <p>We source only the highest quality pipes, fittings, and fixtures from trusted manufacturers, ensuring
+            durability and longevity that stands the test of time.</p>
+        </div>
+        <div class="premium-card animate-on-scroll delay-2">
+          <div class="premium-icon"><i class="bi-person-check"></i></div>
+          <h4>Master Plumbers</h4>
+          <p>Our team consists of master-certified plumbers with decades of combined experience. No job is too
+            complex, no challenge too great for our skilled professionals.</p>
+        </div>
+        <div class="premium-card animate-on-scroll delay-3">
+          <div class="premium-icon"><i class="bi-rocket"></i></div>
+          <h4>Cutting-Edge Tech</h4>
+          <p>We invest in the latest plumbing technology — from thermal leak detection to trenchless pipe repair —
+            to deliver faster, cleaner, and more efficient service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works (Horizontal Timeline) -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-diagram-3"></i> How It Works</span>
+        <h2>Simple Process, Exceptional Results</h2>
+        <p>Getting your plumbing fixed is easier than ever. Just four simple steps stand between you and perfect plumbing.</p>
+      </div>
+      <div class="timeline-horizontal">
+        <div class="timeline-step animate-on-scroll delay-1">
+          <div class="step-circle">1</div>
+          <div class="step-icon"><i class="bi-telephone-fill"></i></div>
+          <h4>Book a Service</h4>
+          <p>Call us or book online. Tell us your plumbing issue and we'll schedule a visit.</p>
+        </div>
+        <div class="timeline-step animate-on-scroll delay-2">
+          <div class="step-circle">2</div>
+          <div class="step-icon"><i class="bi-search"></i></div>
+          <h4>Diagnosis</h4>
+          <p>Our plumber arrives and thoroughly inspects the issue using advanced tools.</p>
+        </div>
+        <div class="timeline-step animate-on-scroll delay-3">
+          <div class="step-circle">3</div>
+          <div class="step-icon"><i class="bi-wrench"></i></div>
+          <h4>Get It Fixed</h4>
+          <p>We fix the problem efficiently with upfront pricing and premium materials.</p>
+        </div>
+        <div class="timeline-step animate-on-scroll delay-4">
+          <div class="step-circle">4</div>
+          <div class="step-icon"><i class="bi-hand-thumbs-up"></i></div>
+          <h4>Enjoy & Relax</h4>
+          <p>Your plumbing is fixed and backed by our 90-day warranty. Sit back and relax.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Stories -->
+  <section class="stories-section">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <span class="badge-text"><i class="bi-heart"></i> Client Stories</span>
+        <h2>Real Stories From Real Customers</h2>
+        <p>See how AquaFix has transformed homes and lives across the city, one pipe at a time.</p>
+      </div>
+      <div class="stories-grid">
+        <article class="story-card animate-on-scroll delay-1">
+          <div class="story-img">
+            <img src="https://img.magnific.com/premium-photo/there-is-kitchen-sink-with-window-potted-plant_1034470-129108.jpg?semt=ais_test_b&w=740&q=80" alt="Customer story" loading="lazy">
+          </div>
+          <div class="story-body">
+            <div class="story-stars">
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+            </div>
+            <p class="story-text">"Our kitchen sink was backing up for weeks. AquaFix came out, diagnosed the issue with
+              a camera, and had it cleared in under an hour. Incredible service!"</p>
+            <div class="story-author">
+              <div class="author-avatar"><img src="https://images.pexels.com/photos/7752811/pexels-photo-7752811.jpeg?auto=compress&cs=tinysrgb&h=120&w=120" alt="Michael Rodriguez"></div>
+              <div class="author-info">
+                <div class="name">nithin reddy</div>
+                <div class="service">Drain Cleaning Service</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card animate-on-scroll delay-2">
+          <div class="story-img">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/034/861/163/small/3d-rendering-bathroom-aromatherapy-relaxation-spa-tiles-ceramics-wooden-cupboard-with-candles-and-towels-mirror-with-illumination-modern-toilet-video.jpg" alt="Customer story" loading="lazy">
+          </div>
+          <div class="story-body">
+            <div class="story-stars">
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+            </div>
+            <p class="story-text">"We renovated our master bathroom with AquaFix and the results are stunning. The team was
+              professional, clean, and finished ahead of schedule. Worth every penny."</p>
+            <div class="story-author">
+              <div class="author-avatar"><img src="https://images.pexels.com/photos/4993172/pexels-photo-4993172.jpeg?auto=compress&cs=tinysrgb&h=120&w=120" alt="Jennifer Lee"></div>
+              <div class="author-info">
+                <div class="name">Jennifer Lee</div>
+                <div class="service">Bathroom Remodel</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-card animate-on-scroll delay-3">
+          <div class="story-img">
+            <img src="https://shop.haierindia.com/blog/wp-content/uploads/2025/11/Get-Perfect-Tankless-water-heater-hotels-or-hostels.jpg" alt="Customer story" loading="lazy">
+          </div>
+          <div class="story-body">
+            <div class="story-stars">
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+              <i class="bi-star-fill"></i>
+            </div>
+            <p class="story-text">"Switched to a tankless water heater with AquaFix's recommendation. Our energy bills
+              dropped significantly and we never run out of hot water. Fantastic experience."</p>
+            <div class="story-author">
+              <div class="author-avatar"><img src="https://images.pexels.com/photos/7397453/pexels-photo-7397453.jpeg?auto=compress&cs=tinysrgb&h=120&w=120" alt="David Kim"></div>
+              <div class="author-info">
+                <div class="name">David Kim</div>
+                <div class="service">Water Heater Install</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box animate-on-scroll">
+        <h2>Ready to Experience Premium Plumbing?</h2>
+        <p>Join thousands of satisfied customers who trust AquaFix for their plumbing needs. Book your service today
+          and see the difference premium makes.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="contact.html" class="btn btn-white btn-lg">
+            <i class="bi-calendar-check"></i> Book a Service
+          </a>
+          <a href="pricing.html" class="btn btn-outline-white btn-lg">
+            <i class="bi-tag"></i> View Pricing
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-brand">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="logo-icon"><i class="bi bi-droplet"></i></span>
+              <span class="brand-name"><span class="brand-aqua">Aqua</span><span class="brand-fix">Fix</span></span>
+            </div>
+            <p class="footer-text">
+              Reliable plumbing and pipe repair services you can trust. From emergency leaks to full bathroom
+              installations, our certified plumbers deliver quality workmanship every time.
             </p>
-            <div class="flex items-center gap-2"
-              style="margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.25rem"><img
-                src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200"
-                class="avatar" alt="Sneha">
-              <div>
-                <div style="font-weight:700;font-size:.95rem">Sneha Iyer</div>
-                <div style="font-size:.85rem" class="muted">Jubilee Hills</div>
-              </div>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
             </div>
-          </article>
-          <article class="reveal card-soft testimonial-card" style="padding:2rem"><i class="bi bi-quote"
-              style="font-size:2rem;color:var(--brand-300)"></i>
-            <div class="stars" style="margin-top:.5rem">★★★★★</div>
-            <p style="margin-top:1rem;flex:1;font-size:1rem;line-height:1.65">"Our kitchen sink was leaking for weeks.
-              AquaFix came the same day, replaced the faucet, and resealed everything in under an hour. Fair price too."
-            </p>
-            <div class="flex items-center gap-2"
-              style="margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.25rem"><img
-                src="https://img.magnific.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"
-                class="avatar" alt="Karthik">
-              <div>
-                <div style="font-weight:700;font-size:.95rem">Karthik Verma</div>
-                <div style="font-size:.85rem" class="muted">Kondapur</div>
-              </div>
-            </div>
-          </article>
-          <article class="reveal card-soft testimonial-card" style="padding:2rem"><i class="bi bi-quote"
-              style="font-size:2rem;color:var(--brand-300)"></i>
-            <div class="stars" style="margin-top:.5rem">★★★★★</div>
-            <p style="margin-top:1rem;flex:1;font-size:1rem;line-height:1.65">"We had a major drain blockage backing up
-              into the bathroom. AquaFix used a camera to find the root cause and hydro-jetted it clear. True
-              professionals."</p>
-            <div class="flex items-center gap-2"
-              style="margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.25rem"><img
-                src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200"
-                class="avatar" alt="Lakshmi">
-              <div>
-                <div style="font-weight:700;font-size:.95rem">Lakshmi Rao</div>
-                <div style="font-size:.85rem" class="muted">Begumpet</div>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 10. FAQ — accordion style (not tab style like Home 1) -->
-    <!-- <section>
-      <div class="container-page">
-        <div class="reveal text-center mx-auto maxw-2xl"><span class="eyebrow">FAQ</span><h2 class="section-title" style="margin-top:1.25rem">Common questions</h2><p class="lead" style="margin-top:1rem">Quick answers to the things Hyderabad homeowners ask us most.</p></div>
-        <div class="faq-group maxw-3xl mx-auto" style="margin-top:3rem">
-          <div class="faq-item reveal card-soft">
-            <button class="faq-toggle"><span class="flex items-center gap-2"><span class="feature-icon" style="width:40px;height:40px;font-size:1.1rem"><i class="bi bi-cash-coin"></i></span> How much does a plumber visit cost?</span><span class="chev"><i class="bi bi-chevron-down"></i></span></button>
-            <div class="faq-body"><div><p>Our flat-rate pricing starts at <strong>₹999</strong> for minor repairs. You receive a written quote before any work begins — no hourly charges, no hidden fees. The price you approve is the price you pay.</p></div></div>
-          </div>
-          <div class="faq-item reveal card-soft">
-            <button class="faq-toggle"><span class="flex items-center gap-2"><span class="feature-icon" style="width:40px;height:40px;font-size:1.1rem"><i class="bi bi-clock-history"></i></span> Do you offer emergency service?</span><span class="chev"><i class="bi bi-chevron-down"></i></span></button>
-            <div class="faq-body"><div><p>Yes. We are available <strong>24/7</strong>. Call +91 80055 50199 and a master plumber will be dispatched to your home, usually within <strong>45 minutes</strong> anywhere in Hyderabad.</p></div></div>
-          </div>
-          <div class="faq-item reveal card-soft">
-            <button class="faq-toggle"><span class="flex items-center gap-2"><span class="feature-icon" style="width:40px;height:40px;font-size:1.1rem"><i class="bi bi-shield-check"></i></span> What warranty do you offer?</span><span class="chev"><i class="bi bi-chevron-down"></i></span></button>
-            <div class="faq-body"><div><p>All repairs come with a written workmanship warranty — up to <strong>10 years</strong> for major installations like repipes and water heaters. If something fails, we fix it free.</p></div></div>
-          </div>
-          <div class="faq-item reveal card-soft">
-            <button class="faq-toggle"><span class="flex items-center gap-2"><span class="feature-icon" style="width:40px;height:40px;font-size:1.1rem"><i class="bi bi-geo-alt"></i></span> Which areas do you cover?</span><span class="chev"><i class="bi bi-chevron-down"></i></span></button>
-            <div class="faq-body"><div><p>We serve all of Hyderabad — from <strong>Banjara Hills and Jubilee Hills</strong> to <strong>Gachibowli, Kukatpally, and Secunderabad</strong>. If you are unsure, just call and we will confirm.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- CTA -->
-    <section>
-      <div class="container-page">
-        <div class="reveal emergency-banner emergency-banner-center"
-          style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;text-align:center;padding:3rem 2rem;min-height:18rem">
-          <!-- <i class="bi bi-exclamation-triangle-fill pulse-icon" style="font-size:2.75rem;flex-shrink:0;color:#fff"></i> -->
-          <div>
-            <h2 style="color:#fff;font-size:1.5rem;margin:0">Ready to upgrade your home's plumbing?</h2>
-            <p style="color:rgba(255,255,255,.9);margin:.5rem 0 0;font-size:.95rem">Book a free consultation with a
-              master plumber. Flat-rate quote, no obligation.</p>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:.7rem">
-            <a href="contact.html" class="btn btn-accent"
-              style="font-size:.9rem;padding:.6rem 1.3rem;margin:0;background:#fff;color:var(--accent-700)"> Book a
-              service<i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" id="footer">
-    <div class="pointer-events-none"
-      style="position:absolute;top:-8rem;left:50%;transform:translateX(-50%);width:40rem;height:16rem;border-radius:50%;background:rgba(52,163,255,.2);filter:blur(60px)">
-    </div>
-    <div class="pointer-events-none"
-      style="position:absolute;bottom:-8rem;right:0;width:24rem;height:16rem;border-radius:50%;background:rgba(8,207,159,.1);filter:blur(60px)">
-    </div>
-    <div class="container-page" style="position:relative">
-      <div class="grid-4" style="gap:3rem">
-        <div>
-          <a class="navbar-brand-custom" href="../index.html"><span class="logo-badge"><i
-                class="bi bi-droplet-half"></i></span><span><span class="logo-name-aqua">Aqua</span><span
-                class="logo-name-fix">Fix</span></span></a>
-          <p style="margin-top:1.25rem;max-width:24rem;font-size:.875rem;color:rgba(255,255,255,.6)">Reliable, licensed
-            plumbing services for homes and businesses across Hyderabad. Upfront pricing, on-time arrival, and a written
-            guarantee on every job.</p>
-          <div class="flex gap-2" style="margin-top:1.5rem">
-            <a href="#" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-        <div>
-          <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#fff">Company
-          </h3>
-          <ul
-            style="list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:.75rem;font-size:.875rem">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="blogs.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about-us.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Services</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
           </ul>
         </div>
-        <div>
-          <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#fff">Services
-          </h3>
-          <ul
-            style="list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:.75rem;font-size:.875rem">
-            <li><a href="services/pipe-repair.html">Pipe Repair</a></li>
-            <li><a href="services/bathroom-fitting.html">Bathroom Fitting</a></li>
-            <li><a href="services/drain-cleaning.html">Drain Cleaning</a></li>
-            <li><a href="services/water-heater.html">Water Heaters</a></li>
-            <li><a href="services/emergency-plumbing.html">Emergency Service</a></li>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-pipe-repair.html"><i class="bi bi-chevron-right"></i> Pipe Repair</a></li>
+            <li><a href="service-bathroom-fitting.html"><i class="bi bi-chevron-right"></i> Bathroom Fitting</a></li>
+            <li><a href="service-drain-cleaning.html"><i class="bi bi-chevron-right"></i> Drain Cleaning</a></li>
+            <li><a href="service-water-heater.html"><i class="bi bi-chevron-right"></i> Water Heaters</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> All Services</a></li>
           </ul>
         </div>
-        <div>
-          <h3 style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#fff">Get in
-            touch</h3>
-          <ul
-            style="list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-direction:column;gap:1rem;font-size:.875rem;color:rgba(255,255,255,.6)">
-            <li class="flex gap-2"><i class="bi bi-geo-alt" style="color:var(--brand-400)"></i> Plot 42, Road No 12,
-              Banjara Hills, Hyderabad, Telangana 500034</li>
-            <li class="flex gap-2"><i class="bi bi-telephone" style="color:var(--brand-400)"></i> <a
-                href="tel:+918005550199">+91 80055 50199</a></li>
-            <li class="flex gap-2"><i class="bi bi-envelope" style="color:var(--brand-400)"></i> <a
-                href="mailto:hello@aquafixplumbing.com">hello@aquafixplumbing.com</a></li>
-            <li class="flex gap-2"><i class="bi bi-clock" style="color:var(--brand-400)"></i> Mon–Sat: 7am–8pm · 24/7
-              Emergency</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem;width:100%">Book a job <i
-              class="bi bi-arrow-right"></i></a>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div class="footer-contact-item">
+            <span class="icon-wrap"><i class="bi bi-geo-alt"></i></span>
+            <div>
+              <div class="label">Address</div>
+              <div class="value">Plot No 42, Road No 12, Banjara Hills, Hyderabad, Telangana 500034</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon-wrap"><i class="bi bi-telephone"></i></span>
+            <div>
+              <div class="label">Emergency Hotline</div>
+              <div class="value">+91 90000 12345</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon-wrap"><i class="bi bi-envelope"></i></span>
+            <div>
+              <div class="label">Email</div>
+              <div class="value">support@aquafix.in</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="flex items-center justify-between"
-        style="margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;font-size:.85rem;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:1rem">
-        <p>© <span data-year>2026</span> AquaFix Plumbing. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-          <a href="coming-soon.html">Coming-soon</a>
-          <a href="404.html">404</a>
-          <a href="maintenance.html">Maintenance</a>
-        </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AquaFix Plumbing. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a href="404.html">404</a></li>
+          <li><a href="maintenance.html">Maintenance</a></li>
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/validation.js"></script>
-</body>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
 </html>
