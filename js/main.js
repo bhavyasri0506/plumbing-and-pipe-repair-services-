@@ -135,6 +135,7 @@ function injectFooter() {
         <div class="col-lg-3 col-md-6 col-6">
           <h4 class="footer-heading">Company</h4>
           <ul class="footer-links">
+            <li><a href="index.html">${icon('chevron-right', { size: 14 })} Home</a></li>
             <li><a href="about-us.html">${icon('chevron-right', { size: 14 })} About Us</a></li>
             <li><a href="services.html">${icon('chevron-right', { size: 14 })} Services</a></li>
             <li><a href="pricing.html">${icon('chevron-right', { size: 14 })} Pricing</a></li>
@@ -185,6 +186,9 @@ function injectFooter() {
         <ul class="footer-bottom-links">
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
           <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+          <li><a href="404.html">404</a></li>
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+          <li><a href="maintenance.html">Maintenance</a></li>
         </ul>
       </div>
     </div>
@@ -446,6 +450,54 @@ window.setupForms = setupForms;
 window.showToast = showToast;
 window.icon = icon;
 
+/* ---------- Hero Slider ---------- */
+function setupHeroSlider() {
+  const slider = document.querySelector('[data-hero-slider]');
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.hero-slide');
+  const indicators = slider.querySelectorAll('[data-hero-indicators] .hero-indicator');
+  const prevBtn = slider.querySelector('[data-hero-prev]');
+  const nextBtn = slider.querySelector('[data-hero-next]');
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer = null;
+
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    indicators.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(next, 4000);
+  }
+
+  const next = () => { show(current + 1); restart(); };
+  const prev = () => { show(current - 1); restart(); };
+
+  if (nextBtn) nextBtn.addEventListener('click', next);
+  if (prevBtn) prevBtn.addEventListener('click', prev);
+
+  indicators.forEach((d, i) => d.addEventListener('click', () => { show(i); restart(); }));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  let touchStartX = 0;
+  slider.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+  }, { passive: true });
+
+  timer = setInterval(next, 6000);
+}
+
 /* ---------- Init ---------- */
 function initApp() {
   injectHeader(detectActivePage());
@@ -457,6 +509,7 @@ function initApp() {
   setupFaqTabs();
   setupBeforeAfter();
   setupForms();
+  setupHeroSlider();
 }
 
 function detectActivePage() {

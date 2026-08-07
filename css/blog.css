@@ -1,6 +1,10 @@
 /* ============================================
    Blog — blog.html & blog-details.html
    ============================================ */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 
 /* ---------- Blog Layout ---------- */
 .blog-layout {
@@ -597,37 +601,64 @@
 }
 .sidebar-cta .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(0,0,0,.3); }
 
-/* ---- Comment Form Section (centered) ---- */
+/* ---- Comment Form Section (centered, redesigned) ---- */
 .comment-form-section { padding: 0; }
-.comment-form-centered { max-width: 42rem; margin: 0 auto; }
+.comment-form-centered { max-width: 36rem; margin: 0 auto; }
 .comment-form-centered .card-soft {
-  background: var(--bg-surface);
+  background: linear-gradient(160deg, var(--bg-surface) 0%, var(--bg-surface-2) 100%);
   border: 1px solid transparent;
   border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: var(--shadow-md);
+  padding: 1.75rem 1.75rem;
+  box-shadow: 0 12px 40px -12px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.04);
   position: relative;
+  overflow: hidden;
+}
+.comment-form-centered .card-soft::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-500), var(--accent-500), var(--primary-500));
+  background-size: 200% 100%;
+  animation: gradient-shift 4s ease infinite;
 }
 .comment-form-centered .card-soft::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--primary-400), var(--accent-400), var(--primary-500));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
 }
+.comment-form-centered .comment-form-icon {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  color: #fff; font-size: 1.25rem;
+  box-shadow: 0 8px 24px -6px rgba(37,99,235,.35);
+}
 .comment-form-centered h3 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-family: 'Sora', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-heading);
-  margin-bottom: .5rem;
+  margin-bottom: .375rem;
+  letter-spacing: -.02em;
 }
+.comment-form-centered .comment-form-subtitle {
+  text-align: center;
+  font-size: .875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center; gap: .375rem;
+}
+.comment-form-centered .comment-form-subtitle i { color: var(--primary-500); }
 .comment-form-centered p {
   text-align: center;
   font-size: .9375rem;
@@ -673,30 +704,40 @@
 
 /* ---- Comment Form ---- */
 .form-label-custom {
-  font-size: .875rem; font-weight: 600; color: var(--text-heading);
-  margin-bottom: .5rem; display: block;
+  font-size: .8125rem; font-weight: 700; color: var(--text-heading);
+  margin-bottom: .5rem; display: flex; align-items: center; gap: .375rem;
+  text-transform: uppercase; letter-spacing: .03em;
 }
+.form-label-custom i { color: var(--primary-500); font-size: .875rem; }
 .form-control-custom {
-  width: 100%; padding: .75rem 1rem; font-size: .9375rem;
-  border: 1px solid var(--border-strong); border-radius: .625rem;
-  background: var(--bg-surface); color: var(--text-heading); transition: border-color .2s, box-shadow .2s;
+  width: 100%; padding: .875rem 1.125rem; font-size: .9375rem;
+  border: 1.5px solid var(--border-strong); border-radius: .75rem;
+  background: var(--bg-surface); color: var(--text-heading);
+  transition: border-color .25s, box-shadow .25s, background .25s;
 }
-.form-control-custom:focus { outline: none; border-color: var(--primary-500); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+.form-control-custom:hover { border-color: var(--primary-300); }
+.form-control-custom:focus {
+  outline: none; border-color: var(--primary-500);
+  box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+  background: var(--bg-surface);
+}
 .form-control-custom::placeholder { color: var(--text-muted); font-size: .875rem; }
 .comment-form-section form { text-align: left; }
 .comment-form-section form .grid-2,
-.comment-form-section form > div { margin-bottom: 1rem; }
+.comment-form-section form > div { margin-bottom: 1.25rem; }
 .comment-form-section form .btn-primary {
   display: inline-flex; align-items: center; gap: .5rem;
-  margin: .5rem 0 0; padding: .75rem 2rem; font-size: .9375rem; font-weight: 700;
+  margin: .5rem 0 0; padding: .875rem 2.5rem; font-size: .9375rem; font-weight: 700;
   background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
-  border: none; border-radius: .625rem; color: #fff;
-  transition: transform .2s, box-shadow .2s;
+  border: none; border-radius: 100px; color: #fff;
+  transition: transform .25s, box-shadow .25s;
+  letter-spacing: .01em;
 }
 .comment-form-section form .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px -5px rgba(37,99,235,.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -5px rgba(37,99,235,.4);
 }
+.comment-form-section form .btn-primary:active { transform: translateY(-1px); }
 
 /* ---- Related Articles ---- */
 .related-card {
