@@ -93,7 +93,7 @@
   border: 1px solid rgba(45,212,191,.35);
   border-radius: var(--radius-full);
   font-size: .6875rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: #4ade80;
@@ -106,7 +106,7 @@
 .hero2-title {
   font-family: 'Sora', sans-serif;
   font-size: clamp(2.25rem, 4.2vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.12;
   color: #fff;
   margin-bottom: 1.25rem;
