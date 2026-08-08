@@ -983,14 +983,15 @@ section {
   align-items: center;
   gap: .5rem;
   padding: .375rem 1rem;
-  background: rgba(255, 255, 255, .15);
-  border: 1px solid rgba(255, 255, 255, .25);
+  background: linear-gradient(135deg, rgba(37, 99, 235, .25), rgba(22, 163, 74, .25));
+  border: 1px solid rgba(255, 255, 255, .3);
   border-radius: var(--radius-full);
   font-size: .8125rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 0;
   order: -1;
+  animation: fadeInDown .6s ease both;
 }
 
 .page-banner .banner-content {
@@ -999,19 +1000,26 @@ section {
 }
 
 .page-banner .banner-content h1 {
-  color: var(--primary-600);
+  color: var(--white);
   font-size: var(--fs-h1);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1rem;
+  animation: fadeInUp .7s ease both;
+  animation-delay: .1s;
 }
 
 .page-banner .banner-content p {
-  color: #16a34a;
-  font-size: 1.2rem;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.0625rem;
   margin-bottom: 1.5rem;
   line-height: 1.7;
   font-weight: 600;
   max-width: 480px;
+  animation: fadeInUp .7s ease both;
+  animation-delay: .2s;
 }
 
 .page-banner .breadcrumb-c {
@@ -1019,14 +1027,16 @@ section {
   align-items: center;
   gap: .5rem;
   padding: .5rem 1.25rem;
-  background: rgba(255, 255, 255, .12);
+  background: linear-gradient(135deg, rgba(37, 99, 235, .2), rgba(22, 163, 74, .2));
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, .2);
+  border: 1px solid rgba(255, 255, 255, .25);
   border-radius: var(--radius-full);
   margin-bottom: 1.5rem;
   font-size: .875rem;
   font-weight: 600;
   color: var(--white);
+  animation: fadeInDown .6s ease both;
+  animation-delay: .05s;
 }
 
 .page-banner .breadcrumb-c a {

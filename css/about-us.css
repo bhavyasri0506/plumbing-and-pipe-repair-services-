@@ -577,7 +577,7 @@
 @media (max-width: 767px) {
   .journey-timeline::before {
     left: 28px;
-    transform: none;
+    transform: translateX(-50%);
   }
 
   .journey-item {
@@ -589,7 +589,8 @@
   }
 
   .journey-item::after {
-    left: 20px !important;
+    left: 28px !important;
+    margin-left: -8px;
     right: auto !important;
     top: 1.5rem !important;
   }
@@ -641,7 +642,21 @@
   }
 
   .journey-timeline {
-    padding-left: 1.5rem;
+    padding-left: 0;
+  }
+
+  .journey-timeline::before {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+
+  .journey-item {
+    padding: 1rem 0 1rem 3rem;
+  }
+
+  .journey-item::after {
+    left: 20px !important;
+    margin-left: -8px;
   }
 
   .journey-item h4 {
